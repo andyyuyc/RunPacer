@@ -11,6 +11,11 @@
 		A1F8FF1429E4A01300296207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF1329E4A01300296207 /* ContentView.swift */; };
 		A1F8FF1629E4A01400296207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F8FF1529E4A01400296207 /* Assets.xcassets */; };
 		A1F8FF1929E4A01400296207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F8FF1829E4A01400296207 /* Preview Assets.xcassets */; };
+		A1F8FF2429E4A0AD00296207 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF2229E4A0AD00296207 /* Home.swift */; };
+		A1F8FF2529E4A0AD00296207 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF2329E4A0AD00296207 /* Water.swift */; };
+		A1F8FF2729E4A18000296207 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF2629E4A18000296207 /* Sport.swift */; };
+		A1F8FF2929E4A3FE00296207 /* SportWater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF2829E4A3FE00296207 /* SportWater.swift */; };
+		A1F8FF2C29E4AA8A00296207 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF2B29E4AA8A00296207 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,13 @@
 		A1F8FF1329E4A01300296207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1F8FF1529E4A01400296207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1F8FF1829E4A01400296207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A1F8FF2229E4A0AD00296207 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A1F8FF2329E4A0AD00296207 /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
+		A1F8FF2629E4A18000296207 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		A1F8FF2829E4A3FE00296207 /* SportWater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportWater.swift; sourceTree = "<group>"; };
+		A1F8FF2A29E4A71F00296207 /* Water.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Water.entitlements; sourceTree = "<group>"; };
+		A1F8FF2B29E4AA8A00296207 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		A1F8FF2D29E4ADF100296207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,9 @@
 		A1F8FF1029E4A01300296207 /* Water */ = {
 			isa = PBXGroup;
 			children = (
+				A1F8FF2D29E4ADF100296207 /* Info.plist */,
+				A1F8FF2A29E4A71F00296207 /* Water.entitlements */,
+				A1F8FF2129E4A0AD00296207 /* View */,
 				A1F8FF1129E4A01300296207 /* WaterApp.swift */,
 				A1F8FF1329E4A01300296207 /* ContentView.swift */,
 				A1F8FF1529E4A01400296207 /* Assets.xcassets */,
@@ -65,6 +80,18 @@
 				A1F8FF1829E4A01400296207 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A1F8FF2129E4A0AD00296207 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1F8FF2229E4A0AD00296207 /* Home.swift */,
+				A1F8FF2329E4A0AD00296207 /* Water.swift */,
+				A1F8FF2629E4A18000296207 /* Sport.swift */,
+				A1F8FF2829E4A3FE00296207 /* SportWater.swift */,
+				A1F8FF2B29E4AA8A00296207 /* Setting.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F8FF2429E4A0AD00296207 /* Home.swift in Sources */,
+				A1F8FF2729E4A18000296207 /* Sport.swift in Sources */,
+				A1F8FF2929E4A3FE00296207 /* SportWater.swift in Sources */,
+				A1F8FF2529E4A0AD00296207 /* Water.swift in Sources */,
+				A1F8FF2C29E4AA8A00296207 /* Setting.swift in Sources */,
 				A1F8FF1429E4A01300296207 /* ContentView.swift in Sources */,
 				A1F8FF1229E4A01300296207 /* WaterApp.swift in Sources */,
 			);
@@ -264,12 +296,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Water/Water.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Water/Preview Content\"";
 				DEVELOPMENT_TEAM = 6Z3LZX7N42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Water/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We request your sports data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We request your sports data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We request your sports data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,12 +330,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Water/Water.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Water/Preview Content\"";
 				DEVELOPMENT_TEAM = 6Z3LZX7N42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Water/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We request your sports data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We request your sports data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We request your sports data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -68,7 +68,7 @@ struct Sport: View {
                     .cornerRadius(10)
             }.padding()
                 .sheet(isPresented: $showWater) {
-                    Water()
+                    SportWater()
                 }
         }
         .onAppear{

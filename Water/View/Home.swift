@@ -13,19 +13,20 @@ struct Home: View {
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
     @State private var showWater = false
+
+    
     var body: some View {
         ZStack{
             WaterWave(progress: progress, waveHelight: 0.025 , offset: startAnimeation)
                 .fill(Color.blue)
             VStack{
-                Color.white
-                    .opacity(0)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(10)
                 GeometryReader{ proxy in
-                    let size = proxy.size
                     VStack(alignment: .center){
-                            Text("今日補水量")
+                        Color.white
+                            .opacity(0)
+                            .frame(width: 50, height:proxy.size.height*0.1)
+                            .cornerRadius(10)
+                        Text("今日補水量")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -34,11 +35,34 @@ struct Home: View {
                             .padding(.bottom, 10)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         
-                            HStack(alignment: .bottom){
-                                Text("1000").font(.system(size: 80))
-                                Text("ml").font(.system(size: 50))
+                        HStack(alignment: .bottom){
+                            Text("1000").font(.system(size: 80))
+                            Text("ml").font(.system(size: 50))
+                        }
+                        
+                        Spacer()
+                        
+                        ScrollView(.horizontal) {
+                            HStack(spacing:10) {
+                                Image("") // 圖片的名稱
+                                        .resizable()
+                                        .frame(width: proxy.size.width*0.3, height: 50)
+                                ForEach(0..<10) { index in
+                                    Button(action: {
+                                        print("Button \(index) tapped")
+                                    }) {
+                                        VStack{
+                                            Image("glass-of-water") // 圖片的名稱
+                                                    .resizable()
+                                                    .frame(width: 50, height: 50) // 設置圖片大小
+                                            Text("100")
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                                
                             }
-                            
+                        }
                     }.padding()
                 }.padding()
                 
@@ -85,4 +109,5 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+
 

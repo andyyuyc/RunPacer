@@ -27,7 +27,6 @@ struct Sport: View {
                     .frame(width: 100, height: 100)
                     .cornerRadius(10)
                 GeometryReader{ proxy in
-                    let size = proxy.size
                     VStack(alignment: .center){
                         Text("今日步数")
                             .font(.system(size: 50))

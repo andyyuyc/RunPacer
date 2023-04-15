@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Water: View {
-    @State var progress: CGFloat = 0
+    @State var progress: CGFloat = 0.1
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
+    
+    @State private var location: CGPoint = .zero
+
+    @State private var lastprogress: CGFloat = 0.1
+
+    
     var body: some View {
         VStack{
             
@@ -23,13 +29,6 @@ struct Water: View {
                 let size = proxy.size
                 
                 ZStack{
-                    Image(systemName: change == 0 ? "drop" : "drop.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.white)
-                        .scaleEffect(x:1.1,y: 1)
-                        .offset(y: -1)
-                    
                     WaterWave(progress: progress, waveHelight: 0.05 , offset: startAnimeation)
                         .fill(Color.blue)
                         .overlay(content:{
@@ -55,11 +54,26 @@ struct Water: View {
                             }
                         })
                         .mask {
-                            Image(systemName: "drop.fill")
+                            Image("glass-of-water")
                                 .resizable()
                                 .aspectRatio( contentMode: .fit)
                                 .padding(20)
+                                
                         }
+                    Image("Empty_Glass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.white)
+                        .scaleEffect(x:1.1,y: 1)
+                        .offset(y: 0)
+                        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .global)
+                            .onChanged { value in
+                                let translation = value.translation.height/proxy.size.height
+                                progress = lastprogress - translation
+                            }
+                            .onEnded { value in
+                                lastprogress = progress
+                            })
                 }.frame(width: size.width,height: size.height,alignment:.center)
                     .onAppear{
                         withAnimation(.linear(duration: 2)
@@ -71,19 +85,27 @@ struct Water: View {
             }
             Text("200 ml")
                 .font(.largeTitle).padding()
-            Button(action: {
-                change = change == 0  ? 1 : 0
-            }) {
-                Text("喝水")
-                    .font(.largeTitle)
-                    .padding()
-                    .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(100)
-            }.padding()
-            Slider(value: $progress)
-                .padding(/*@START_MENU_TOKEN@*/[.leading, .bottom, .trailing], 50.0/*@END_MENU_TOKEN@*/)
+            HStack{
+                Button(action: {
+                    // 在這裡添加按鈕被點擊時的操作
+                }) {
+                   
+                        
+                }
+                Button(action: {
+                    change = change == 0  ? 1 : 0
+                }) {
+                    Text("喝水")
+                        .font(.largeTitle)
+                        .padding()
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(100)
+                }.padding()
+            }
+            
+
             
         }.padding().frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(Color("BG"))
     }

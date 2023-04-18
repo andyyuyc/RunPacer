@@ -8,31 +8,48 @@
 import SwiftUI
 
 struct TestView: View {
-    @State private var position: CGSize = .zero
-     @State private var lastOffset: CGSize = .zero
-     
-     var body: some View {
-         let dragGesture = DragGesture(minimumDistance: 0, coordinateSpace: .global)
-             .onChanged { value in
-                 let translation = CGSize(width: value.translation.width + self.lastOffset.width, height: value.translation.height + self.lastOffset.height)
-                 print(translation.height)
-                 print(value.translation.height)
-                 self.position = translation
-             }
-             .onEnded { value in
-                 self.lastOffset = self.position
-             }
-         
-         Image("Empty_Glass")
-             .resizable()
-             .scaledToFit()
-             .frame(width: 300, height: 300)
-             .offset(x: position.width, y: position.height)
-             .gesture(dragGesture)
-     }
+    @State private var isPressed = false
+    @State private var isShowingCancel = false
     
+    var body: some View {
+        VStack {
+            Button(action: {
+                self.isPressed.toggle()
+            }, label: {
+                Text("長按我")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(isPressed ? Color.red : Color.blue)
+                    .cornerRadius(10)
+            })
+            .simultaneousGesture(
+                LongPressGesture(minimumDuration: 1)
+                    .onChanged({ _ in
+                        self.isShowingCancel = true
+                    })
+                    .onEnded({ _ in
+                        self.isShowingCancel = false
+                        self.isPressed = false
+                    })
+            )
+            
+            if isShowingCancel {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        self.isShowingCancel = false
+                        self.isPressed = false
+                    }, label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.red)
+                            .font(.system(size: 25))
+                    })
+                    .padding(.trailing, 20)
+                }
+            }
+        }
+    }
 }
-
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()

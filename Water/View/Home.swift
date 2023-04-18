@@ -13,8 +13,8 @@ struct Home: View {
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
     @State private var showWater = false
+    @State var selectedButton: Int? = nil // 初始值為nil
 
-    
     var body: some View {
         ZStack{
             WaterWave(progress: progress, waveHelight: 0.025 , offset: startAnimeation)
@@ -30,7 +30,6 @@ struct Home: View {
                             .font(.system(size: 50))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
-                            .padding(.leading, -20)
                             .padding(.top, 10)
                             .padding(.bottom, 10)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -41,47 +40,53 @@ struct Home: View {
                         }
                         
                         Spacer()
-                        
-                        ScrollView(.horizontal) {
-                            HStack(spacing:10) {
-                                Image("") // 圖片的名稱
+                        ZStack{
+                            
+                            Rectangle()
+                                .foregroundColor(Color.white).opacity(0.8)
+                                .frame(width: proxy.size.width, height: 120)
+                                .cornerRadius(20)
+                                
+                   
+                            ScrollView(.horizontal) {
+                                
+                                HStack(spacing:10) {
+                                    Image("") // 圖片的名稱
                                         .resizable()
                                         .frame(width: proxy.size.width*0.3, height: 50)
-                                ForEach(0..<10) { index in
-                                    Button(action: {
-                                        print("Button \(index) tapped")
-                                    }) {
-                                        VStack{
-                                            Image("glass-of-water") // 圖片的名稱
+                                    ForEach(drinks) { drink in
+                                        Button(action: {
+                                
+                                            self.showWater = true
+                                        }) {
+                                            VStack{
+                                                Image(drink.image)// 圖片的名稱
                                                     .resizable()
                                                     .frame(width: 50, height: 50) // 設置圖片大小
-                                            Text("100")
+                                                Text(drink.name)
+                                                    .foregroundColor(Color.blue)
+                                                
+                                            }
+                                            
                                         }
+                                        .padding() // 加上一些間距
                                     }
-                                    Spacer()
+                                    
                                 }
-                                
                             }
                         }
-                    }.padding()
+                        
+                        
+                        
+                        
+                    }
                 }.padding()
                 
                 
                 
                 
                 Spacer()
-                Button(action: {
-                    change = change == 0  ? 1 : 0
-                    self.showWater = true
-                }) {
-                    Text("喝水")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(.black)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(Color.white)
-                        .cornerRadius(100)
-                }.padding()
+               
                 Color.white
                     .opacity(0)
                     .frame(width: 100, height: 90)
@@ -109,5 +114,4 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
-
 

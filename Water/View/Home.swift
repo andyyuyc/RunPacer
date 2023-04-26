@@ -75,10 +75,7 @@ struct Home: View {
                                 }
                             }
                         }
-                        
-                        
-                        
-                        
+
                     }
                 }.padding()
                 
@@ -91,7 +88,7 @@ struct Home: View {
                     .opacity(0)
                     .frame(width: 100, height: 90)
                     .cornerRadius(10)
-            }.padding()
+            }
                 .sheet(isPresented: $showWater) {
                     Water()
                 }

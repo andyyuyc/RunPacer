@@ -5,7 +5,6 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            
             Home()
                 .tabItem {
                     Image(systemName: "drop.degreesign")
@@ -28,10 +27,8 @@ struct ContentView: View {
                 Text("運動")
             }
             .tag(2)
-            
-            
             NavigationView {
-                //Setting()
+                Setting()
             }.tabItem {
                 Image(systemName: "gearshape")
                 Text("設定")

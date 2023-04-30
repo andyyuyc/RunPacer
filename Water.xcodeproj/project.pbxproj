@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5852278529EE48B0007B8E6E /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852278429EE48B0007B8E6E /* Drink.swift */; };
-		58CA2EC829EAC30F005A9C02 /* TestIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA2EC729EAC30F005A9C02 /* TestIView.swift */; };
+		5863A8E729FD77CE00727C2B /* drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863A8E629FD77CE00727C2B /* drinks.swift */; };
+		5863A8E929FD9BA400727C2B /* date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863A8E829FD9BA400727C2B /* date.swift */; };
+		58CB3E7F29FCF6CC007E3550 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB3E7E29FCF6CC007E3550 /* Record.swift */; };
+		58CB3E8129FD0A7C007E3550 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB3E8029FD0A7C007E3550 /* DateValue.swift */; };
+		58CB3EA529FD73DE007E3550 /* Record_Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB3EA429FD73DE007E3550 /* Record_Water.swift */; };
+		58CB3EA729FD75E1007E3550 /* chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB3EA629FD75E0007E3550 /* chart.swift */; };
 		A1F8FF1229E4A01300296207 /* WaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF1129E4A01300296207 /* WaterApp.swift */; };
 		A1F8FF1429E4A01300296207 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8FF1329E4A01300296207 /* ContentView.swift */; };
 		A1F8FF1629E4A01400296207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F8FF1529E4A01400296207 /* Assets.xcassets */; };
@@ -21,8 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5852278429EE48B0007B8E6E /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
-		58CA2EC729EAC30F005A9C02 /* TestIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIView.swift; sourceTree = "<group>"; };
+		5863A8E629FD77CE00727C2B /* drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinks.swift; sourceTree = "<group>"; };
+		5863A8E829FD9BA400727C2B /* date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = date.swift; sourceTree = "<group>"; };
+		58CB3E7E29FCF6CC007E3550 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		58CB3E8029FD0A7C007E3550 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		58CB3EA429FD73DE007E3550 /* Record_Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record_Water.swift; sourceTree = "<group>"; };
+		58CB3EA629FD75E0007E3550 /* chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chart.swift; sourceTree = "<group>"; };
 		A1F8FF0E29E4A01300296207 /* Water.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Water.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F8FF1129E4A01300296207 /* WaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterApp.swift; sourceTree = "<group>"; };
 		A1F8FF1329E4A01300296207 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,7 +79,6 @@
 				A1F8FF2A29E4A71F00296207 /* Water.entitlements */,
 				A1F8FF2129E4A0AD00296207 /* View */,
 				A1F8FF1129E4A01300296207 /* WaterApp.swift */,
-				A1F8FF1329E4A01300296207 /* ContentView.swift */,
 				A1F8FF1529E4A01400296207 /* Assets.xcassets */,
 				A1F8FF1729E4A01400296207 /* Preview Content */,
 			);
@@ -94,8 +101,13 @@
 				A1F8FF2629E4A18000296207 /* Sport.swift */,
 				A1F8FF2829E4A3FE00296207 /* SportWater.swift */,
 				A1F8FF2B29E4AA8A00296207 /* Setting.swift */,
-				58CA2EC729EAC30F005A9C02 /* TestIView.swift */,
-				5852278429EE48B0007B8E6E /* Drink.swift */,
+				58CB3E7E29FCF6CC007E3550 /* Record.swift */,
+				58CB3E8029FD0A7C007E3550 /* DateValue.swift */,
+				A1F8FF1329E4A01300296207 /* ContentView.swift */,
+				58CB3EA629FD75E0007E3550 /* chart.swift */,
+				58CB3EA429FD73DE007E3550 /* Record_Water.swift */,
+				5863A8E629FD77CE00727C2B /* drinks.swift */,
+				5863A8E829FD9BA400727C2B /* date.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,13 +183,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F8FF2429E4A0AD00296207 /* Home.swift in Sources */,
-				5852278529EE48B0007B8E6E /* Drink.swift in Sources */,
+				58CB3E7F29FCF6CC007E3550 /* Record.swift in Sources */,
+				58CB3E8129FD0A7C007E3550 /* DateValue.swift in Sources */,
 				A1F8FF2729E4A18000296207 /* Sport.swift in Sources */,
+				58CB3EA729FD75E1007E3550 /* chart.swift in Sources */,
 				A1F8FF2929E4A3FE00296207 /* SportWater.swift in Sources */,
 				A1F8FF2529E4A0AD00296207 /* Water.swift in Sources */,
 				A1F8FF2C29E4AA8A00296207 /* Setting.swift in Sources */,
+				58CB3EA529FD73DE007E3550 /* Record_Water.swift in Sources */,
 				A1F8FF1429E4A01300296207 /* ContentView.swift in Sources */,
-				58CA2EC829EAC30F005A9C02 /* TestIView.swift in Sources */,
+				5863A8E729FD77CE00727C2B /* drinks.swift in Sources */,
+				5863A8E929FD9BA400727C2B /* date.swift in Sources */,
 				A1F8FF1229E4A01300296207 /* WaterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

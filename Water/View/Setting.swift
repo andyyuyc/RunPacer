@@ -57,24 +57,30 @@ struct Setting: View {
                         NavigationLink(destination: Water()) {
                             Label("每日目標", systemImage: "target")
                         }
-                        Toggle("喝水提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
+                        Toggle("日常喝水提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
+                        Toggle("運動喝水提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
                         
                     }
-                    Section("test"){
+                    Section("運動"){
                         NavigationLink(destination: Water()) {
-                            Label("General", systemImage: "target").foregroundColor(Color.gray)
+                            Label("裝置配對", systemImage: "target").foregroundColor(Color.black)
                         }
                         NavigationLink(destination: Water()) {
-                            Label("General", systemImage: "target").foregroundColor(Color.gray)
+                            Label("水杯", systemImage: "target").foregroundColor(Color.black)
                         }
                         NavigationLink(destination: Water()) {
-                            Label("General", systemImage: "target").foregroundColor(Color.gray)
+                            Label("含水量", systemImage: "target").foregroundColor(Color.black)
+                        }
+                    }
+                    Section("飲料"){
+                        NavigationLink(destination: Water()) {
+                            Label("排序自訂", systemImage: "target").foregroundColor(Color.black)
                         }
                         NavigationLink(destination: Water()) {
-                            Label("General", systemImage: "target").foregroundColor(Color.gray)
+                            Label("水杯", systemImage: "target").foregroundColor(Color.black)
                         }
                         NavigationLink(destination: Water()) {
-                            Label("General", systemImage: "target").foregroundColor(Color.gray)
+                            Label("含水量", systemImage: "target").foregroundColor(Color.black)
                         }
                     }
                     

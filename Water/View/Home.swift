@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct Home: View {
+
     @State var progress: CGFloat = 0.2
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
@@ -78,8 +79,6 @@ struct Home: View {
 
                     }
                 }.padding()
-                
-                
                 
                 
                 Spacer()

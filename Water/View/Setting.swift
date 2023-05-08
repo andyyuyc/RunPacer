@@ -15,7 +15,6 @@ struct Setting: View {
 
     var body: some View {
         ZStack{
-            Color.white
             VStack(alignment: .center){
                 Color.white
                     .opacity(0)

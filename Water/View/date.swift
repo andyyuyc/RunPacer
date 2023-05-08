@@ -45,3 +45,43 @@ var tasks: [TaskMetaData] = [
         Task(title: "Kavsoft App Updates....")
     ], taskDate: getSampleDate(offset: -20))
 ]
+struct Drink_recrod: Identifiable {
+    var id = UUID() .uuidString
+    var num: Int
+    var ml: Float
+}
+struct DrinkMetaData: Identifiable{
+    var id = UUID() .uuidString
+    var drink: [Drink_recrod]
+    var drinkDate: Date
+}
+var drinks_recrod: [DrinkMetaData] = [
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 0, ml: 100),
+        Drink_recrod(num: 2, ml: 200),
+        Drink_recrod(num: 3, ml: 300)
+    ], drinkDate: getSampleDate(offset: 0)),
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 0, ml: 100),
+    ], drinkDate: getSampleDate(offset: -3)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 5, ml: 100),
+    ], drinkDate: getSampleDate(offset: -8)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 6, ml: 100),
+    ], drinkDate: getSampleDate(offset: 10)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 7, ml: 100),
+    ], drinkDate: getSampleDate(offset: -22)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 0, ml: 100),
+    ], drinkDate: getSampleDate(offset: 15)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 1, ml: 100),
+    ], drinkDate: getSampleDate(offset: -20))
+]

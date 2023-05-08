@@ -28,9 +28,6 @@ struct Record: View {
     
     var body: some View {
         ZStack{
-            Color("BG")
-                .ignoresSafeArea()
-
             VStack {
                 Color.white
                     .opacity(0)
@@ -47,8 +44,16 @@ struct Record: View {
                 selectedViewType.view
             }
             
-        }.ignoresSafeArea()
-            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(Color("BG"))
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(
+            ZStack{
+                Color("BG")
+                WaterWave(progress: 0.2, waveHelight: 0.05 , offset: 0)
+                    .fill(Color.yellow)
+                
+            }
+        ).ignoresSafeArea()
+        
     }
 }
 

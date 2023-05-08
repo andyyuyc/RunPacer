@@ -11,15 +11,15 @@ struct Record_Water: View {
     @State var currentDate: Date = Date()
     @State var currentMonth: Int = 0
     var body: some View {
-        ZStack{
+        ScrollView {
             VStack(spacing: 35){
                 ZStack{
                     
-                    GeometryReader{ proxy in
-                        Rectangle()
-                            .foregroundColor(Color.white).opacity(0.8)
-                            .cornerRadius(20)
-                            .frame(height:400)
+                    /*Rectangle()
+                     .foregroundColor(Color.white).opacity(0.8)
+                     .cornerRadius(20)
+                     .frame(height:400)*/
+                    VStack{
                         VStack{
                             let days: [String] =
                             ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
@@ -41,7 +41,7 @@ struct Record_Water: View {
                                 Button() {
                                     withAnimation{
                                         print(currentDate)
-                                        currentMonth -= 1
+                                        currentMonth += 1
                                     }
                                     
                                 }label: {
@@ -64,29 +64,123 @@ struct Record_Water: View {
                             LazyVGrid(columns: columns, spacing: 15){
                                 ForEach(extractDate()){value in
                                     CardView(value: value)
-                                    .background(
-                                        Capsule().fill(Color.blue)
-                                            .padding(.horizontal,8)
-                                            .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
-                                    )
-                                    .onTapGesture {
-                                        currentDate = value.date
-                                    }
+                                        .background(
+                                            Capsule().fill(Color.blue)
+                                                .padding(.horizontal,8)
+                                                .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
+                                        )
+                                        .onTapGesture {
+                                            currentDate = value.date
+                                        }
                                 }
                             }
+                        }.padding().frame(maxWidth:.infinity,alignment:.leading)
+                            .background(
+                                Color.white
+                                    .cornerRadius(10)
+                            )
+                        
+                        /*HStack{
+                            VStack {
+                                Text("喝水量")
+                                    .font(.title3)
+                                
+                                Spacer()
+                                Text("100 mL")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    
+                            }
+                            Spacer()
+                            VStack{
+                                Text("目標")
+                                    .font(.title3)
+                                    
+                                Spacer()
+                                Text("10％")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    
+                            }
                         }.padding()
-                    }
+                        .padding().frame(maxWidth:.infinity,alignment:.leading)
+                        .background(
+                            Color.white
+                                .cornerRadius(10)
+                        )*/
+                        
+                        VStack(spacing: 15){
+                            Text("Drinks").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
+                            /*if let task = tasks.first(where: { task in
+                             return isSameDay(date1: task.taskDate, date2: currentDate)
+                             }){
+                             ForEach(task.task){task in
+                             
+                             VStack(alignment: .leading,spacing:  10){
+                             Text(task.time
+                             .addingTimeInterval(CGFloat
+                             .random(in: 0...5000)),style: .time)
+                             Text(task.title).font(.title2.bold())
+                             }.padding(.vertical,10)
+                             .padding(.horizontal)
+                             .frame(maxWidth:.infinity,alignment:.leading)
+                             .background(
+                             Color.blue.opacity(0.5)
+                             .cornerRadius(10)
+                             )
+                             }
+                             }else{
+                             Text("No drink Found")
+                             }*/
+                            ///
+                            if let drink = drinks_recrod.first(where: { drink in
+                                return isSameDay(date1: drink.drinkDate, date2: currentDate)
+                            }){
+                                ForEach(drink.drink){drink in
+                                    HStack{
+                                        Image(drinks[drink.num].image)
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                        VStack(alignment: .leading,spacing:  10){
+                                            Text(String(drinks[drink.num].name))
+                                            
+                                            Text(String(drink.ml*drinks[drink.num].proportion)).font(.title2.bold())
+                                        }
+                                    }
+                                    .padding(.vertical,10)
+                                    .padding(.horizontal)
+                                    .frame(maxWidth:.infinity,alignment:.leading)
+                                    .background(
+                                        Color.white
+                                            .cornerRadius(10)
+                                    )
+                                    
+                                }
+                            }else{
+                                Text("No drink Found")
+                            }
+                            ////
+                        }
+                        .padding(.top,20)
+                        Rectangle()
+                            .foregroundColor(Color.white).opacity(0)
+                            .cornerRadius(20)
+                            .frame(height:200)
+                        
+                        
+                    }.padding()
+                    
+                    
                     
                 }
                 
                 
                 
-            }.onChange(of: currentMonth) { newValue in
-                currentDate = getCurrentMonth()
-            }.padding()
+            }
             
-        }.ignoresSafeArea()
-            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(Color("BG"))
+        }
+        
+        
         
     }
     
@@ -95,15 +189,32 @@ struct Record_Water: View {
         VStack{
             
             if value.day != -1{
-                if let task = tasks.first(where: {task in
-                    return isSameDay(date1: task.taskDate, date2: value.date)
+                /*if let task = tasks.first(where: {task in
+                 return isSameDay(date1: task.taskDate, date2: value.date)
+                 }){
+                 Text("\(value.day)").font(.title3.bold())
+                 .foregroundColor(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : .primary)
+                 .frame(maxWidth: .infinity)
+                 Spacer()
+                 Circle()
+                 .foregroundColor(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : Color.blue)
+                 .frame(width: 8,height: 8)
+                 }
+                 else{
+                 Text("\(value.day)").font(.title3.bold())
+                 .foregroundColor(isSameDay(date1: value.date, date2: currentDate) ? .white : .primary)
+                 .frame(maxWidth: .infinity)
+                 Spacer()
+                 }*/
+                if let drink = drinks_recrod.first(where: {drink in
+                    return isSameDay(date1: drink.drinkDate, date2: value.date)
                 }){
                     Text("\(value.day)").font(.title3.bold())
-                        .foregroundColor(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : .primary)
+                        .foregroundColor(isSameDay(date1: drink.drinkDate, date2: currentDate) ? .white : .primary)
                         .frame(maxWidth: .infinity)
                     Spacer()
                     Circle()
-                        .foregroundColor(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : Color.blue)
+                        .foregroundColor(isSameDay(date1: drink.drinkDate, date2: currentDate) ? .white : Color.blue)
                         .frame(width: 8,height: 8)
                 }
                 else{
@@ -117,7 +228,6 @@ struct Record_Water: View {
     }
     func isSameDay(date1: Date,date2: Date)->Bool{
         let calendar = Calendar.current
-        
         return calendar.isDate(date1, inSameDayAs: date2)
     }
     

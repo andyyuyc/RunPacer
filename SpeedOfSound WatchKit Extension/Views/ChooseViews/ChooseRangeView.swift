@@ -17,7 +17,7 @@ struct ChooseRangeView: View {
         VStack {
             ScrollView {
                 HStack {
-                    Text("Age:")
+                    Text("年齡:")
                     Spacer()
                     Picker("", selection: $workoutManager.workoutModel.age) {
                         ForEach(ageRange, id: \.self) {
@@ -49,7 +49,7 @@ struct ChooseRangeView: View {
 //                    .offset(y: -10)
 //                }
                 VStack(alignment: .leading) {
-                    Text("Heart rate zone:")
+                    Text("心率範圍:")
                     HStack {
                         Picker("", selection: $workoutManager.workoutModel.lowBPM) {
                             ForEach(heartRange, id: \.self) {
@@ -78,7 +78,7 @@ struct ChooseRangeView: View {
                 }
                 NavigationLink(destination: CadenceView()) {
                     HStack {
-                        Text("Next")
+                        Text("下一步")
                             .bold()
                             .foregroundColor(Color("Green"))
                     }
@@ -86,7 +86,7 @@ struct ChooseRangeView: View {
             }
         }
         .padding([.leading, .trailing])
-        .navigationBarTitle("Calculate zone❤️")
+        .navigationBarTitle("計算區間")
         .onAppear() {
             workoutManager.workoutModel.feedback = feedback
         }

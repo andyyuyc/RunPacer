@@ -94,7 +94,7 @@ struct DashboardView: View {
                                 .font(.largeTitle)
                                 .foregroundColor(playerViewModel.mode == .running ? Color("Main") : .black)
                                 .fontWeight(.bold)
-                            Text("Heart rate")
+                            Text("Heart Rate")
                                 .font(.footnote)
                                 .foregroundColor(playerViewModel.mode == .running ? Color("Main") : .black)
                         }
@@ -154,7 +154,7 @@ struct DashboardView: View {
             .onAppear() {
                 dashboardViewModel.checkCurrentAuthorizationSetting()
             }
-            .navigationTitle("Sound of Speed")
+            .navigationTitle("脈衝")
             .navigationBarTitleTextColor(.black)
             .navigationBarTitleDisplayMode(.automatic)
         }

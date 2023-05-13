@@ -14,7 +14,7 @@ final class PlayerViewModel: ObservableObject, MetronomeDelegate {
     @Published var effectIndex = 0
     @Published var effect = ["1","2","3"]
     @Published var BPM: Int = 160
-    @Published var speedString = "Allegro"
+    @Published var speedString = "快板"
     let myMetronome: MetronomeModel
 
     // Picker view Popups
@@ -183,40 +183,40 @@ final class PlayerViewModel: ObservableObject, MetronomeDelegate {
         }
         
         if(BPM >= 15) {
-            speedString = "Grave"
+            speedString = "最缓板"
         }
         if(BPM >= 40) {
-            speedString = "Lento"
+            speedString = "缓板"
         }
         if(BPM >= 45) {
-            speedString = "Largo"
+            speedString = "小广板"
         }
         if(BPM >= 55) {
-            speedString = "Adagio"
+            speedString = "慢板"
         }
         if(BPM >= 65) {
-            speedString = "Adagietto"
+            speedString = "颇慢"
         }
         if(BPM >= 73) {
-            speedString = "Andante"
+            speedString = "行板"
         }
         if(BPM >= 86) {
-            speedString = "Moderato"
+            speedString = "中板"
         }
         if(BPM >= 98) {
-            speedString = "Allegretto"
+            speedString = "小快板"
         }
         if(BPM >= 109) {
-            speedString = "Allegro"
+            speedString = "快板"
         }
         if(BPM >= 132) {
-            speedString = "Vivace"
+            speedString = "活泼"
         }
         if(BPM >= 168) {
-            speedString = "Presto"
+            speedString = "急板"
         }
         if(BPM >= 178) {
-            speedString = "Prestissimo"
+            speedString = "最急板"
         }
     }
     

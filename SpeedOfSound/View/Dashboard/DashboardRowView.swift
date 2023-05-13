@@ -15,7 +15,7 @@ struct DashboardRowView: View {
         VStack(alignment: .leading, spacing: 15) {
             TitleWorkouts(type: type)
 
-            Text("You have \(workouts.count) workouts")
+            Text("你有 \(workouts.count) 個運動紀錄")
                 .font(Font.body.bold())
                 .foregroundColor(Color.white)
             Divider()
@@ -60,7 +60,7 @@ struct TitleWorkouts: View {
                 showView(imageName: "running", name: "Running test")
 
             } else if type == .walking {
-                showView(imageName: "walking", name: "All workouts")
+                showView(imageName: "walking", name: "運動紀錄")
             }
         }
         .font(Font.body.bold())

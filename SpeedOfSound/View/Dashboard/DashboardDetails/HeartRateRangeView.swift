@@ -10,7 +10,7 @@ struct HeartRateRangeView: View {
             LineChart(chartData: rowDetailsViewModel.heartRateData)
                 .touchOverlay(chartData: rowDetailsViewModel.heartRateData, specifier: "%.0f")
                 .yAxisPOI(chartData: rowDetailsViewModel.heartRateData,
-                          markerName: "Higher heart rate",
+                          markerName: "高心率",
                           markerValue: Double(rowDetailsViewModel.detailsModel.highBPM),
                           labelPosition: .center(specifier: "%.0f"),
                           labelColour: .black,
@@ -18,7 +18,7 @@ struct HeartRateRangeView: View {
                           lineColour: Color(red: 1.0, green: 0.75, blue: 0.25),
                           strokeStyle: StrokeStyle(lineWidth: 3, dash: [5,10]))
                 .yAxisPOI(chartData: rowDetailsViewModel.heartRateData,
-                          markerName: "Lower heart rate",
+                          markerName: "低心率",
                           markerValue: Double(rowDetailsViewModel.detailsModel.lowBPM),
                           labelPosition: .center(specifier: "%.0f"),
                           labelColour: .black,

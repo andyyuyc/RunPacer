@@ -28,7 +28,7 @@ struct SummaryView: View {
 //                .background(Color(UIColor.systemGray2))
             
             VStack(alignment: .leading, spacing: 25) {
-                Text("Heart Rate Summary")
+                Text("心率概況")
                     .foregroundColor(.white)
                 VStack {
                     DoughnutChart(chartData: rowDetailsViewModel.hearRatePercentageData)
@@ -54,9 +54,9 @@ struct FeedbackView: View {
     var cadence: some View {
         VStack(alignment: .trailing, spacing: 5) {
             if rowDetailsViewModel.detailsModel.feedbackStyle == "Sound" {
-                Text("Sound frequency")
+                Text("節奏")
             } else {
-                Text("Start Cadence")
+                Text("起始節奏")
             }
             Text("\(rowDetailsViewModel.detailsModel.cadence)")
                 .workoutTitleStyle()
@@ -67,7 +67,7 @@ struct FeedbackView: View {
     
     var feedback: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Chosen Feedback")
+            Text("選擇節奏")
                 .bold()
                 .foregroundColor(.white)
             HStack {
@@ -88,7 +88,7 @@ struct FeedbackView: View {
     
     var standard_deviation: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text("Standard deviation")
+            Text("標準差")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.standard_deviation)")
                 .workoutTitlCyan()
@@ -111,7 +111,7 @@ struct AgeView: View {
     
     var average: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Mean Correction Time")
+            Text("平均修正時間")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.meanCorrectionTime)")
                 .workoutTitleRed()
@@ -122,7 +122,7 @@ struct AgeView: View {
     
     var age: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text("Age")
+            Text("年齡")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.age)")
                 .workoutTitlCyan()
@@ -133,7 +133,7 @@ struct AgeView: View {
     
     var restingHeartRate: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text("Resting Heart Rate")
+            Text("靜息心率")
             Text("\(rowDetailsViewModel.detailsModel.restingHeartRate)")
                 .workoutTitleRed()
             + Text(" BPM")
@@ -155,7 +155,7 @@ struct NumberOfTimesView: View {
     
     var numberOfTimes: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text("Number of Times Rising Wrist")
+            Text("抬腕次數")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.numberOfTimeGotLooked)")
                 .workoutTitleRed()
@@ -166,7 +166,7 @@ struct NumberOfTimesView: View {
     
     var numberOfFeedback: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Number of Feedback Given")
+            Text("反饋次數")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.numberOfFeedback)")
                 .workoutTitlBlue()
@@ -189,7 +189,7 @@ struct DistanceStepsView: View {
     
     var duration: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Duration")
+            Text("時長")
             HStack(spacing: 1) {
                 if rowDetailsViewModel.detailsModel.getDuration().0 != 0 {
                     Text("\(rowDetailsViewModel.detailsModel.getDuration().0)")
@@ -213,7 +213,7 @@ struct DistanceStepsView: View {
     
     var distance: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Distance")
+            Text("距離")
             Text(rowDetailsViewModel.detailsModel.distance)
                 .workoutTitlCyan()
             + Text(" km")
@@ -235,7 +235,7 @@ struct RangeCadenceView: View {
     
     var range: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Heart Rate Zone(Zone 2)")
+            Text("心率區間(根據年齡設定)")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.lowBPM)")
                 .workoutTitleHighZone()
@@ -250,7 +250,7 @@ struct RangeCadenceView: View {
     
     var steps: some View {
         VStack(alignment: .trailing, spacing: 5) {
-            Text("Average Cadence")
+            Text("平均步頻")
                 .foregroundColor(.white)
             Text("\(rowDetailsViewModel.averageCadence)")
                 .workoutTitleStyle()

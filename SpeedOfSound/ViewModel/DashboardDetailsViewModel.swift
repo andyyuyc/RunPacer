@@ -133,9 +133,9 @@ final class DashboardDetailsViewModel: ObservableObject {
         }
         let data = PieDataSet(
             dataPoints: [
-                PieChartDataPoint(value: lowPercentage, description: "Lower \(lowPercentage)%"  , colour: .yellow  , label: .label(text: "Lower"  , rFactor: 0.8)),
-                PieChartDataPoint(value: insidePercentage, description: "Inside \(insidePercentage)%"  , colour: .green   , label: .label(text: "Inside"  , rFactor: 0.8)),
-                PieChartDataPoint(value: highPercentage, description: "Higher \(highPercentage)%", colour: .red, label: .label(text: "Higher", rFactor: 0.8))],
+                PieChartDataPoint(value: lowPercentage, description: "低於 \(lowPercentage)%"  , colour: .yellow  , label: .label(text: "Lower"  , rFactor: 0.8 )),
+                PieChartDataPoint(value: insidePercentage, description: "區與 \(insidePercentage)%"  , colour: .green   , label: .label(text: "Inside"  , rFactor: 0.8)),
+                PieChartDataPoint(value: highPercentage, description: "高於 \(highPercentage)%", colour: .red, label: .label(text: "Higher", rFactor: 0.8))],
             legendTitle: "Data")
 
         return DoughnutChartData(dataSets: data,
@@ -203,16 +203,16 @@ final class DashboardDetailsViewModel: ObservableObject {
         
         let data = MultiLineDataSet(dataSets: [
             LineDataSet(dataPoints: dataPoints,
-                        legendTitle: "Heart rate",
+                        legendTitle: "心率",
                        pointStyle: PointStyle(pointType: .outline, pointShape: .circle),
                        style: LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line)),
             LineDataSet(dataPoints: feedbackDataPoints,
-                        legendTitle: "Start Cadence",
+                        legendTitle: "起始節奏",
                        pointStyle: PointStyle(pointType: .outline, pointShape: .circle),
                         style: LineStyle(lineColour: ColourStyle(colour: .yellow), lineType: .line))])
         DispatchQueue.main.async {
             self.multiLinChartData = MultiLineChartData(dataSets: data,
-                                                        metadata: ChartMetadata(title: "Feedback with heart rate", subtitle: "Difference"),
+                                                        metadata: ChartMetadata(title: "心率反饋", subtitle: "Difference"),
                                                         xAxisLabels: ["January", "December"],
                                                         chartStyle: LineChartStyle(infoBoxPlacement: .floating,
                                                                                    markerType: .full(attachment: .line(dot: .style(DotStyle()))),

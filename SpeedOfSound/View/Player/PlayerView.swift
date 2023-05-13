@@ -88,7 +88,7 @@ struct PlayerView: View {
                         .font(.largeTitle)
                         .foregroundColor(playerViewModel.mode == .running ? Color("Main") : .white)
                         .fontWeight(.bold)
-                    Text("Heart rate")
+                    Text("Heart Rate")
                         .font(.footnote)
                         .foregroundColor(playerViewModel.mode == .running ? Color("Main") : .white)
                 }

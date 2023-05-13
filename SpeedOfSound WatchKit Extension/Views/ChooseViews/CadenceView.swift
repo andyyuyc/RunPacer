@@ -25,14 +25,14 @@ struct CadenceView: View {
                 Spacer()
             }
             NavigationLink(destination: ContentView()) {
-                Text("Finish")
+                Text("結束")
                     .bold()
                     .foregroundColor(Color("Green"))
                     .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
             }
         }
         .padding([.leading, .trailing])
-        .navigationBarTitle("Cadence")
+        .navigationBarTitle("節奏")
 
     }
 }

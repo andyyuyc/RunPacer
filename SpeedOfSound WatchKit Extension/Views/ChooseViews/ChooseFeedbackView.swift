@@ -27,7 +27,7 @@ struct ChooseFeedbackView: View {
                     }
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     
-                    Text("Watch A")
+                    Text("靜音模式")
                         .bold()
                         .font(.footnote)
                         .foregroundColor(Color("Green"))
@@ -47,7 +47,7 @@ struct ChooseFeedbackView: View {
                             .foregroundColor(Color("Green"))
                     }
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                    Text("Watch B")
+                    Text("節拍器模式")
                         .bold()
                         .font(.footnote)
                         .foregroundColor(Color("Green"))
@@ -65,7 +65,7 @@ struct ChooseFeedbackView: View {
                             .foregroundColor(Color("Green"))
                     }
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                    Text("iOS B")
+                    Text("與手機聯動")
                         .bold()
                         .font(.footnote)
                         .foregroundColor(Color("Green"))
@@ -92,7 +92,7 @@ struct ChooseFeedbackView: View {
 //            .padding(EdgeInsets(top: 20, leading: 5, bottom: 20, trailing: 5))
         }
         .listStyle(.carousel)
-        .navigationBarTitle("Feedback")
+        .navigationBarTitle("反饋模式")
         .onAppear {
             workoutManager.requestAuthorization()
         }

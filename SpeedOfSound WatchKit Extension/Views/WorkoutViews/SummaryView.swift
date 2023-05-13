@@ -22,38 +22,38 @@ struct SummaryView: View {
     
     var body: some View {
         if workoutManager.workout == nil {
-            ProgressView("Saving Workout")
+            ProgressView("保存中")
                 .navigationBarHidden(true)
         } else {
             ScrollView {
                 VStack(alignment: .leading) {
-                    SummaryMetricView(title: "Total Time",
+                    SummaryMetricView(title: "總時間",
                                       value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? "")
                         .foregroundStyle(.yellow)
-                    SummaryMetricView(title: "Avg. Heart Rate",
+                    SummaryMetricView(title: "平均心率",
                                       value: workoutManager.averageHeartRate.formatted(.number.precision(.fractionLength(0))) + " bpm")
                         .foregroundStyle(.red)
-                    SummaryMetricView(title: "Number of Rise Wrist",
+                    SummaryMetricView(title: "抬腕次數",
                                       value: workoutManager.workoutModel.numberOfGotLooked.formatted() + " times")
-                    SummaryMetricView(title: "Number Feedback Given",
+                    SummaryMetricView(title: "反饋次數",
                                       value: workoutManager.workoutModel.numberOfFeedback.formatted() + " times")
-                    SummaryMetricView(title: "Total Distance",
+                    SummaryMetricView(title: "總距離",
                                       value: Measurement(value: workoutManager.workout?.totalDistance?.doubleValue(for: .meter()) ?? 0,
                                                          unit: UnitLength.meters)
                                         .formatted(.measurement(width: .abbreviated,
                                                                 usage: .road,
                                                                 numberFormatStyle: .number.precision(.fractionLength(2)))))
                         .foregroundStyle(.green)
-                    Text("Activity Rings")
+                    Text("運動環")
                     ActivityRingsView(healthStore: workoutManager.healthStore)
                         .frame(width: 50, height: 50)
-                    Button("Done") {
+                    Button("完成") {
                         dismiss()
                     }
                 }
                 .scenePadding()
             }
-            .navigationTitle("Summary")
+            .navigationTitle("概括")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

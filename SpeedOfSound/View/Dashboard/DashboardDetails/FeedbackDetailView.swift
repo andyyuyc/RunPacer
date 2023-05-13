@@ -35,7 +35,7 @@ struct FeedbackDetailView: View {
                     LineChartDataPoint(value: 4.5,  xAxisLabel: "F", description: "February"),
                     LineChartDataPoint(value: 6.9,  xAxisLabel: "M", description: "March"),
                     LineChartDataPoint(value: 8.7,  xAxisLabel: "A", description: "April"),
-                    LineChartDataPoint(value: 12.1, xAxisLabel: "M", description: "May"),
+                    LineChartDataPoint(value: 12.1, xAxisLabel: "M", description: "五月"),
                     LineChartDataPoint(value: 15.1, xAxisLabel: "J", description: "June"),
                     LineChartDataPoint(value: 17.3, xAxisLabel: "J", description: "July"),
                     LineChartDataPoint(value: 17.0, xAxisLabel: "A", description: "August"),

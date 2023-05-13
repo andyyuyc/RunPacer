@@ -31,7 +31,7 @@ struct ContentView: View {
             .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
         }
         .listStyle(.carousel)
-        .navigationBarTitle("Let's start 💪")
+        .navigationBarTitle("Lets GO!!! 💪")
         .onAppear {
             workoutManager.requestAuthorization()
         }
@@ -42,21 +42,21 @@ enum WorkoutType: String, Identifiable {
     var id: RawValue { rawValue }
 
     
-    case outdoorRunning = "Outdoor running"
-    case indoorRunning = "Indoor running"
-    case outdoorWalking = "Outdoor walking"
-    case indoorWalking = "Indoor walking"
+    case outdoorRunning = "戶外跑步"
+    case indoorRunning = "室內跑步"
+    case outdoorWalking = "戶外步行"
+    case indoorWalking = "室內步行"
     
     var name: String {
         switch self {
         case .outdoorRunning:
-            return "Outdoor Run"
+            return "戶外跑步"
         case .indoorRunning:
-            return "Indoor run"
+            return "室內跑步"
         case .outdoorWalking:
-            return "Outdoor walk"
+            return "戶外步行"
         case .indoorWalking:
-            return "Indoor walk"
+            return "室內步行"
         }
     }
     

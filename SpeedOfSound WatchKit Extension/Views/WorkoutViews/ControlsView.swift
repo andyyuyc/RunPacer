@@ -20,7 +20,7 @@ struct ControlsView: View {
                 }
                 .tint(.red)
                 .font(.title2)
-                Text("End")
+                Text("結束")
             }
             VStack {
                 Button {
@@ -30,7 +30,7 @@ struct ControlsView: View {
                 }
                 .tint(.yellow)
                 .font(.title2)
-                Text(workoutManager.running ? "Pause" : "Resume")
+                Text(workoutManager.running ? "暫停" : "Resume")
             }
         }
     }

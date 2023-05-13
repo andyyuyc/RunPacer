@@ -12,7 +12,7 @@ struct DashboardDetailsView: View {
                 SummaryView(rowDetailsViewModel: rowDetailsViewModel)
             }
         }
-        .navigationTitle("Workout details")
+        .navigationTitle("運動分析")
         .onAppear() {
             rowDetailsViewModel.getHeartRates()
             rowDetailsViewModel.getSteps()

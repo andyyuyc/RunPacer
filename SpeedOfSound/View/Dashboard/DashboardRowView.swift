@@ -76,7 +76,7 @@ struct ThreeRowWorkouts: View {
             ForEach(Array(workouts.enumerated()), id: \.offset) { (offset, element) in
                 NavigationLink {
                     ZStack {
-                        Color.black.edgesIgnoringSafeArea(.all)
+                        Color.white.edgesIgnoringSafeArea(.all)
                         DashboardDetailsView(rowDetailsViewModel: DashboardDetailsViewModel(workout: element))
                     }
                 } label: {

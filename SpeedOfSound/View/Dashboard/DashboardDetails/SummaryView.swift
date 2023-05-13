@@ -29,6 +29,7 @@ struct SummaryView: View {
             
             VStack(alignment: .leading, spacing: 25) {
                 Text("Heart Rate Summary")
+                    .foregroundColor(.white)
                 VStack {
                     DoughnutChart(chartData: rowDetailsViewModel.hearRatePercentageData)
                         .touchOverlay(chartData: rowDetailsViewModel.hearRatePercentageData)
@@ -68,6 +69,7 @@ struct FeedbackView: View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Chosen Feedback")
                 .bold()
+                .foregroundColor(.white)
             HStack {
                 NavigationLink(destination: FeedbackDetailView(rowDetailsViewModel: rowDetailsViewModel)) {
                     HStack {
@@ -87,6 +89,7 @@ struct FeedbackView: View {
     var standard_deviation: some View {
         VStack(alignment: .trailing, spacing: 5) {
             Text("Standard deviation")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.standard_deviation)")
                 .workoutTitlCyan()
         }
@@ -109,6 +112,7 @@ struct AgeView: View {
     var average: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Mean Correction Time")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.meanCorrectionTime)")
                 .workoutTitleRed()
             + Text(" seconds")
@@ -119,6 +123,7 @@ struct AgeView: View {
     var age: some View {
         VStack(alignment: .trailing, spacing: 5) {
             Text("Age")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.age)")
                 .workoutTitlCyan()
             + Text(" years old")
@@ -151,6 +156,7 @@ struct NumberOfTimesView: View {
     var numberOfTimes: some View {
         VStack(alignment: .trailing, spacing: 5) {
             Text("Number of Times Rising Wrist")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.numberOfTimeGotLooked)")
                 .workoutTitleRed()
             + Text(" times")
@@ -161,6 +167,7 @@ struct NumberOfTimesView: View {
     var numberOfFeedback: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Number of Feedback Given")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.numberOfFeedback)")
                 .workoutTitlBlue()
             + Text(" times")
@@ -229,6 +236,7 @@ struct RangeCadenceView: View {
     var range: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Heart Rate Zone(Zone 2)")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.detailsModel.lowBPM)")
                 .workoutTitleHighZone()
             + Text(" -- ")
@@ -243,6 +251,7 @@ struct RangeCadenceView: View {
     var steps: some View {
         VStack(alignment: .trailing, spacing: 5) {
             Text("Average Cadence")
+                .foregroundColor(.white)
             Text("\(rowDetailsViewModel.averageCadence)")
                 .workoutTitleStyle()
             + Text(" SPM")

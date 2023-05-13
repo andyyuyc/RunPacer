@@ -138,7 +138,7 @@ struct DashboardView: View {
                     .padding()
                     
                     DashboardRowView(workouts: dashboardViewModel.walkingWorkouts, type: .walking, animation: animation)
-                    
+                        .padding(.horizontal)
                         .listStyle(PlainListStyle())
                     
                 }

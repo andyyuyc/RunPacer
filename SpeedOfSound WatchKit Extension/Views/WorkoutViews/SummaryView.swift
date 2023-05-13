@@ -43,6 +43,7 @@ struct SummaryView: View {
                                         .formatted(.measurement(width: .abbreviated,
                                                                 usage: .road,
                                                                 numberFormatStyle: .number.precision(.fractionLength(2)))))
+                    
                         .foregroundStyle(.green)
                     Text("運動環")
                     ActivityRingsView(healthStore: workoutManager.healthStore)

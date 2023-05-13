@@ -42,10 +42,10 @@ enum WorkoutType: String, Identifiable {
     var id: RawValue { rawValue }
 
     
-    case outdoorRunning = "戶外跑步"
-    case indoorRunning = "室內跑步"
-    case outdoorWalking = "戶外步行"
-    case indoorWalking = "室內步行"
+    case outdoorRunning = "Outdoor running"
+    case indoorRunning = "Indoor running"
+    case outdoorWalking = "Outdoor walking"
+    case indoorWalking = "Indoor walking"
     
     var name: String {
         switch self {

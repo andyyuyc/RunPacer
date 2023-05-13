@@ -5,6 +5,7 @@
 //  Created by 許桓菘 on 2023/4/8.
 //
 
+import Foundation
 import SwiftUI
 import HealthKit
 
@@ -18,8 +19,8 @@ struct Home: View {
     @State var selectedButton: Int? = nil // 初始值為nil
     @State private var stepCount: Int = 0
     private let healthStore = HKHealthStore()
-    
-    
+
+
     
     var body: some View {
         ZStack{
@@ -56,47 +57,13 @@ struct Home: View {
                         HStack(alignment: .bottom){
                             Text("\(stepCount)").font(.system(size: 80))
                                 .foregroundColor(.black)
+                            
                             Text("步").font(.system(size: 40))
                                 .foregroundColor(.black)
                         }
                         
                         
                         Spacer()
-                        ZStack{
-                            
-                            Rectangle()
-                                .foregroundColor(Color.white).opacity(0.8)
-                                .frame(width: proxy.size.width, height: 120)
-                                .cornerRadius(20)
-                            
-                            
-                            ScrollView(.horizontal) {
-                                
-                                HStack(spacing:10) {
-                                    Image("") // 圖片的名稱
-                                        .resizable()
-                                        .frame(width: proxy.size.width*0.3, height: 50)
-                                    ForEach(drinks) { drink in
-                                        Button(action: {
-                                            
-                                            self.showWater = true
-                                        }) {
-                                            VStack{
-                                                Image(drink.image)// 圖片的名稱
-                                                    .resizable()
-                                                    .frame(width: 50, height: 50) // 設置圖片大小
-                                                Text(drink.name)
-                                                    .foregroundColor(Color.blue)
-                                                
-                                            }
-                                            
-                                        }
-                                        .padding() // 加上一些間距
-                                    }
-                                    
-                                }
-                            }
-                        }
                         
                     }
                 }.padding()
@@ -114,6 +81,7 @@ struct Home: View {
             }
             
             
+            
         }
         .onAppear{
             withAnimation(.linear(duration: 5)
@@ -126,7 +94,46 @@ struct Home: View {
         
         
     }
+    private func authorizeHealthKit() {
+        let typesToShare = Set([
+            HKObjectType.workoutType()
+        ])
+        let typesToRead = Set([
+            HKObjectType.quantityType(forIdentifier: .stepCount)!
+        ])
+        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
+            if !success {
+                print("Error: \(String(describing: error))")
+            }
+        }
+    }
+    
+    private func getTodaysSteps() {
+        let type = HKObjectType.quantityType(forIdentifier: .stepCount)!
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        let startDate = calendar.date(from: components)!
+        let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        let query = HKStatisticsQuery(quantityType: type, quantitySamplePredicate: predicate,
+                                      options: [.cumulativeSum]) { (query, statistics, error) in
+            guard let statistics = statistics else {
+                print("Error getting statistics: (String(describing: error))")
+                return
+            }
+            DispatchQueue.main.async {
+                if let sum = statistics.sumQuantity() {
+                    self.stepCount = Int(sum.doubleValue(for: HKUnit.count()))
+                }
+            }
+        }
+        healthStore.execute(query)
+    }
 }
+
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {

@@ -30,7 +30,7 @@ struct Sport: View {
                     VStack(alignment: .center){
                         Text("今日步数")
                             .font(.system(size: 50))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .fontWeight(.bold)
                             .padding(.leading, -20)
                             .padding(.top, 10)
@@ -38,13 +38,15 @@ struct Sport: View {
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         HStack(alignment: .bottom){
                             Text("\(stepCount)").font(.system(size: 80))
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Text("步").font(.system(size: 40))
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                         
                     }.padding()
                 }.padding()
+                
+                
                 
                 Spacer()
                 

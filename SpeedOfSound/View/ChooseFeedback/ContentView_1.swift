@@ -15,54 +15,65 @@ struct ContentView_1: View {
     }
     
     var body: some View {
-        ZStack {
-            ZStack(alignment: .bottom) {
-                
-                    NavigationView {
-                        DashboardView(namespace: Namespace().wrappedValue)
-                            .environmentObject(DashboardViewModel())
-                            .environmentObject(PlayerViewModel())
-                    }
+                    ZStack {
+                        NavigationView {
+
+                ZStack(alignment: .bottom) {
                     
-                
-                ListenNowView(showPlayer: $playerViewModel.showPlayer)
-                
-                HalfASheet(isPresented: $playerViewModel.showGif) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "applewatch.side.right")
-                                .foregroundColor(.black)
-                            Text("Use our")
-                                .foregroundColor(.black)
-                            + Text(" Apple Watch ")
-                                .bold()
-                                .foregroundColor(Color("Main"))
-                            + Text("app")
-                                .foregroundColor(.black)
+                    
+                    
+                    
+                    ListenNowView(showPlayer: $playerViewModel.showPlayer)
+                    
+                    HalfASheet(isPresented: $playerViewModel.showGif) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Image(systemName: "applewatch.side.right")
+                                    .foregroundColor(.black)
+                                Text("Use our")
+                                    .foregroundColor(.black)
+                                + Text(" Apple Watch ")
+                                    .bold()
+                                    .foregroundColor(Color("Main"))
+                                + Text("app")
+                                    .foregroundColor(.black)
+                            }
+                            
+                            GIFImage(name: "appleWatchAnimation")
+                                .frame(height: 250)
                         }
-                        
-                        GIFImage(name: "appleWatchAnimation")
-                            .frame(height: 250)
                     }
+                    .closeButtonColor(.white)
+                    .height(.proportional(0.4))
+                    .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(
+                        ZStack{
+                            Color("BG")
+                            WaterWave(progress: 0.2, waveHelight: 0.05 , offset: 0)
+                                .fill(Color("SportColor"))
+                            
+                        }
+                    ).ignoresSafeArea()
+                    
+                    DashboardView(namespace: Namespace().wrappedValue)
+                        .environmentObject(DashboardViewModel())
+                        .environmentObject(PlayerViewModel())
+                    
+                    
                 }
-                .backgroundColor(.white)
-                .closeButtonColor(.white)
-                .height(.proportional(0.4))
                 
+                if playerViewModel.showNotificationPickerView || playerViewModel.showSoundPickerView {
+                    PickerView()
+                }
             }
-            
-            if playerViewModel.showNotificationPickerView || playerViewModel.showSoundPickerView {
-                PickerView()
+            //        .onChange(of: playerViewModel.heartRate) { newValue in
+            //            playerViewModel.changeMetronomeBPM(newHearRateBPM: newValue)
+            //        }
+            .onChange(of: playerViewModel.workoutModel) { newValue in
+                playerViewModel.myMetronome.setTempo(to: newValue.cadence)
             }
+            .environmentObject(playerViewModel)
+            .ignoresSafeArea(.keyboard)
         }
-        //        .onChange(of: playerViewModel.heartRate) { newValue in
-        //            playerViewModel.changeMetronomeBPM(newHearRateBPM: newValue)
-        //        }
-        .onChange(of: playerViewModel.workoutModel) { newValue in
-            playerViewModel.myMetronome.setTempo(to: newValue.cadence)
-        }
-        .environmentObject(playerViewModel)
-        .ignoresSafeArea(.keyboard)
     }
 }
 

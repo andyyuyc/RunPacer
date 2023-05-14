@@ -51,20 +51,6 @@ struct ContentView: View {
     }
 }
 
-// 根據選擇的選項設定 tabbar 的背景色
-private func setTabBarColor(for tab: Int) {
-    switch tab {
-    case 0:
-        UITabBar.appearance().backgroundColor = .blue
-    case 1:
-        UITabBar.appearance().backgroundColor = .green
-    case 2:
-        UITabBar.appearance().backgroundColor = .red
-    default:
-        break
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

@@ -75,7 +75,7 @@
 		6BE4A02928107A57004CB806 /* SpeedOfSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A02828107A57004CB806 /* SpeedOfSoundTests.swift */; };
 		6BE4A03328107A57004CB806 /* SpeedOfSoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A03228107A57004CB806 /* SpeedOfSoundUITests.swift */; };
 		6BE4A03528107A57004CB806 /* SpeedOfSoundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A03428107A57004CB806 /* SpeedOfSoundUITestsLaunchTests.swift */; };
-		6BE4A03928107A57004CB806 /* MetronomeZones WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6BE4A03828107A57004CB806 /* MetronomeZones WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BE4A03928107A57004CB806 /* iAquaPulse WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6BE4A03828107A57004CB806 /* iAquaPulse WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6BE4A03E28107A58004CB806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4A03D28107A58004CB806 /* Assets.xcassets */; };
 		6BE4A04928107A58004CB806 /* SpeedOfSoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A04828107A58004CB806 /* SpeedOfSoundApp.swift */; };
 		6BE4A04B28107A58004CB806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4A04A28107A58004CB806 /* ContentView.swift */; };
@@ -100,6 +100,16 @@
 		A1A4F0B42A0FE0B20025DA94 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A4F0A82A0FE0B20025DA94 /* Water.swift */; };
 		A1A4F0B52A0FE0B20025DA94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A4F0A92A0FE0B20025DA94 /* ContentView.swift */; };
 		A1A4F0B62A0FE0B20025DA94 /* chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A4F0AA2A0FE0B20025DA94 /* chart.swift */; };
+		A1DF594E2A1051CA00165FB2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DF594D2A1051CA00165FB2 /* WidgetKit.framework */; };
+		A1DF59502A1051CA00165FB2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DF594F2A1051CA00165FB2 /* SwiftUI.framework */; };
+		A1DF59532A1051CA00165FB2 /* iAquaPulseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59522A1051CA00165FB2 /* iAquaPulseWidgetBundle.swift */; };
+		A1DF59552A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59542A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift */; };
+		A1DF59572A1051CA00165FB2 /* iAquaPulseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */; };
+		A1DF595A2A1051CB00165FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1DF59592A1051CB00165FB2 /* Assets.xcassets */; };
+		A1DF595C2A1051CB00165FB2 /* iAquaPulseWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */; };
+		A1DF595D2A1051CB00165FB2 /* iAquaPulseWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */; };
+		A1DF59602A1051CB00165FB2 /* iAquaPulseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1DF594C2A1051CA00165FB2 /* iAquaPulseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1DF59662A105CDB00165FB2 /* iAquaPulseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +148,13 @@
 			remoteGlobalIDString = 6BE4A03728107A57004CB806;
 			remoteInfo = "MetronomeZones WatchKit App";
 		};
+		A1DF595E2A1051CB00165FB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BE4A00C28107A54004CB806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1DF594B2A1051CA00165FB2;
+			remoteInfo = iAquaPulseWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -147,9 +164,20 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				6BE4A03928107A57004CB806 /* MetronomeZones WatchKit App.app in Embed Watch Content */,
+				6BE4A03928107A57004CB806 /* iAquaPulse WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DF59642A1051CC00165FB2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1DF59602A1051CB00165FB2 /* iAquaPulseWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A1E774AF29F8919D00412ACA /* Embed ExtensionKit Extensions */ = {
@@ -233,7 +261,7 @@
 		6BE4A02E28107A57004CB806 /* MetronomeZonesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeZonesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE4A03228107A57004CB806 /* SpeedOfSoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedOfSoundUITests.swift; sourceTree = "<group>"; };
 		6BE4A03428107A57004CB806 /* SpeedOfSoundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedOfSoundUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6BE4A03828107A57004CB806 /* MetronomeZones WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MetronomeZones WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BE4A03828107A57004CB806 /* iAquaPulse WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iAquaPulse WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE4A03D28107A58004CB806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE4A04828107A58004CB806 /* SpeedOfSoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedOfSoundApp.swift; sourceTree = "<group>"; };
 		6BE4A04A28107A58004CB806 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -264,6 +292,16 @@
 		A1A4F0A82A0FE0B20025DA94 /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		A1A4F0A92A0FE0B20025DA94 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1A4F0AA2A0FE0B20025DA94 /* chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chart.swift; sourceTree = "<group>"; };
+		A1DF594C2A1051CA00165FB2 /* iAquaPulseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iAquaPulseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DF594D2A1051CA00165FB2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A1DF594F2A1051CA00165FB2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A1DF59522A1051CA00165FB2 /* iAquaPulseWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAquaPulseWidgetBundle.swift; sourceTree = "<group>"; };
+		A1DF59542A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAquaPulseWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAquaPulseWidget.swift; sourceTree = "<group>"; };
+		A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = iAquaPulseWidget.intentdefinition; sourceTree = "<group>"; };
+		A1DF59592A1051CB00165FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1DF595B2A1051CB00165FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1DF59652A10583A00165FB2 /* iAquaPulseWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iAquaPulseWidgetExtension.entitlements; sourceTree = "<group>"; };
 		A1E774B329F891C300412ACA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -314,6 +352,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DF59492A1051CA00165FB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1DF59502A1051CA00165FB2 /* SwiftUI.framework in Frameworks */,
+				A1DF594E2A1051CA00165FB2 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +561,7 @@
 		6BE4A00B28107A54004CB806 = {
 			isa = PBXGroup;
 			children = (
+				A1DF59652A10583A00165FB2 /* iAquaPulseWidgetExtension.entitlements */,
 				A104A4B729F7061500F761BF /* MetronomeZones-WatchKit-App-Info.plist */,
 				6BE4A01628107A54004CB806 /* SpeedOfSound */,
 				6BE4A02728107A57004CB806 /* SpeedOfSoundTests */,
@@ -522,6 +570,7 @@
 				6BE4A04728107A58004CB806 /* SpeedOfSound WatchKit Extension */,
 				6BE4A06028107A59004CB806 /* SpeedOfSound WatchKit AppTests */,
 				6BE4A06A28107A59004CB806 /* SpeedOfSound WatchKit AppUITests */,
+				A1DF59512A1051CA00165FB2 /* iAquaPulseWidget */,
 				6BE4A01528107A54004CB806 /* Products */,
 				6BFE6A5A28108294008FE74E /* Frameworks */,
 			);
@@ -533,9 +582,10 @@
 				6BE4A01428107A54004CB806 /* iAquaPulse.app */,
 				6BE4A02428107A57004CB806 /* MetronomeZonesTests.xctest */,
 				6BE4A02E28107A57004CB806 /* MetronomeZonesUITests.xctest */,
-				6BE4A03828107A57004CB806 /* MetronomeZones WatchKit App.app */,
+				6BE4A03828107A57004CB806 /* iAquaPulse WatchKit App.app */,
 				6BE4A05D28107A59004CB806 /* MetronomeZones WatchKit AppTests.xctest */,
 				6BE4A06728107A59004CB806 /* MetronomeZones WatchKit AppUITests.xctest */,
+				A1DF594C2A1051CA00165FB2 /* iAquaPulseWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,8 +688,23 @@
 				A1E774B329F891C300412ACA /* HealthKit.framework */,
 				6B3402D528210A2200C71216 /* HealthKit.framework */,
 				6BFE6A5B28108294008FE74E /* HealthKit.framework */,
+				A1DF594D2A1051CA00165FB2 /* WidgetKit.framework */,
+				A1DF594F2A1051CA00165FB2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1DF59512A1051CA00165FB2 /* iAquaPulseWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A1DF59522A1051CA00165FB2 /* iAquaPulseWidgetBundle.swift */,
+				A1DF59542A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift */,
+				A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */,
+				A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */,
+				A1DF59592A1051CB00165FB2 /* Assets.xcassets */,
+				A1DF595B2A1051CB00165FB2 /* Info.plist */,
+			);
+			path = iAquaPulseWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,11 +718,13 @@
 				6BE4A01128107A54004CB806 /* Frameworks */,
 				6BE4A01228107A54004CB806 /* Resources */,
 				6BE4A07828107A59004CB806 /* Embed Watch Content */,
+				A1DF59642A1051CC00165FB2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6BE4A03B28107A57004CB806 /* PBXTargetDependency */,
+				A1DF595F2A1051CB00165FB2 /* PBXTargetDependency */,
 			);
 			name = iAquaPulse;
 			packageProductDependencies = (
@@ -707,9 +774,9 @@
 			productReference = 6BE4A02E28107A57004CB806 /* MetronomeZonesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6BE4A03728107A57004CB806 /* MetronomeZones WatchKit App */ = {
+		6BE4A03728107A57004CB806 /* iAquaPulse WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6BE4A07528107A59004CB806 /* Build configuration list for PBXNativeTarget "MetronomeZones WatchKit App" */;
+			buildConfigurationList = 6BE4A07528107A59004CB806 /* Build configuration list for PBXNativeTarget "iAquaPulse WatchKit App" */;
 			buildPhases = (
 				6BE4A03628107A57004CB806 /* Resources */,
 				6BE4A03F28107A58004CB806 /* Sources */,
@@ -720,9 +787,9 @@
 			);
 			dependencies = (
 			);
-			name = "MetronomeZones WatchKit App";
+			name = "iAquaPulse WatchKit App";
 			productName = "SpeedOfSound WatchKit App";
-			productReference = 6BE4A03828107A57004CB806 /* MetronomeZones WatchKit App.app */;
+			productReference = 6BE4A03828107A57004CB806 /* iAquaPulse WatchKit App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6BE4A05C28107A59004CB806 /* MetronomeZones WatchKit AppTests */ = {
@@ -761,6 +828,23 @@
 			productReference = 6BE4A06728107A59004CB806 /* MetronomeZones WatchKit AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A1DF594B2A1051CA00165FB2 /* iAquaPulseWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1DF59612A1051CC00165FB2 /* Build configuration list for PBXNativeTarget "iAquaPulseWidgetExtension" */;
+			buildPhases = (
+				A1DF59482A1051CA00165FB2 /* Sources */,
+				A1DF59492A1051CA00165FB2 /* Frameworks */,
+				A1DF594A2A1051CA00165FB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iAquaPulseWidgetExtension;
+			productName = iAquaPulseWidgetExtension;
+			productReference = A1DF594C2A1051CA00165FB2 /* iAquaPulseWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -793,6 +877,9 @@
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 6BE4A03728107A57004CB806;
 					};
+					A1DF594B2A1051CA00165FB2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 				};
 			};
 			buildConfigurationList = 6BE4A00F28107A54004CB806 /* Build configuration list for PBXProject "MetronomeZones" */;
@@ -817,9 +904,10 @@
 				6BE4A01328107A54004CB806 /* iAquaPulse */,
 				6BE4A02328107A57004CB806 /* MetronomeZonesTests */,
 				6BE4A02D28107A57004CB806 /* MetronomeZonesUITests */,
-				6BE4A03728107A57004CB806 /* MetronomeZones WatchKit App */,
+				6BE4A03728107A57004CB806 /* iAquaPulse WatchKit App */,
 				6BE4A05C28107A59004CB806 /* MetronomeZones WatchKit AppTests */,
 				6BE4A06628107A59004CB806 /* MetronomeZones WatchKit AppUITests */,
+				A1DF594B2A1051CA00165FB2 /* iAquaPulseWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -882,6 +970,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1DF594A2A1051CA00165FB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1DF595A2A1051CB00165FB2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -897,6 +993,8 @@
 				6B436F2828314DAA00CB5655 /* CadenceView.swift in Sources */,
 				A1A4F0B32A0FE0B20025DA94 /* Setting.swift in Sources */,
 				6B5E1C90283A87F500267A40 /* FeedbackDetailView.swift in Sources */,
+				A1DF59662A105CDB00165FB2 /* iAquaPulseWidget.swift in Sources */,
+				A1DF595D2A1051CB00165FB2 /* iAquaPulseWidget.intentdefinition in Sources */,
 				6B3402C2281EEC6400C71216 /* TriangleWaveModel.swift in Sources */,
 				A1A4F0B22A0FE0B20025DA94 /* Record.swift in Sources */,
 				6B5E1C8E283A7AEB00267A40 /* Double+extensions.swift in Sources */,
@@ -997,6 +1095,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1DF59482A1051CA00165FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1DF595C2A1051CB00165FB2 /* iAquaPulseWidget.intentdefinition in Sources */,
+				A1DF59572A1051CA00165FB2 /* iAquaPulseWidget.swift in Sources */,
+				A1DF59552A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift in Sources */,
+				A1DF59532A1051CA00165FB2 /* iAquaPulseWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1012,18 +1121,23 @@
 		};
 		6BE4A03B28107A57004CB806 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6BE4A03728107A57004CB806 /* MetronomeZones WatchKit App */;
+			target = 6BE4A03728107A57004CB806 /* iAquaPulse WatchKit App */;
 			targetProxy = 6BE4A03A28107A57004CB806 /* PBXContainerItemProxy */;
 		};
 		6BE4A06928107A59004CB806 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6BE4A03728107A57004CB806 /* MetronomeZones WatchKit App */;
+			target = 6BE4A03728107A57004CB806 /* iAquaPulse WatchKit App */;
 			targetProxy = 6BE4A06828107A59004CB806 /* PBXContainerItemProxy */;
 		};
 		A104A4B929F7061500F761BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6BE4A03728107A57004CB806 /* MetronomeZones WatchKit App */;
+			target = 6BE4A03728107A57004CB806 /* iAquaPulse WatchKit App */;
 			targetProxy = A104A4B829F7061500F761BF /* PBXContainerItemProxy */;
+		};
+		A1DF595F2A1051CB00165FB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1DF594B2A1051CA00165FB2 /* iAquaPulseWidgetExtension */;
+			targetProxy = A1DF595E2A1051CB00165FB2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1237,6 +1351,7 @@
 		6BE4A07A28107A59004CB806 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeedOfSound/SpeedOfSound.entitlements;
@@ -1276,6 +1391,7 @@
 		6BE4A07B28107A59004CB806 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpeedOfSound/SpeedOfSound.entitlements;
@@ -1479,6 +1595,71 @@
 			};
 			name = Release;
 		};
+		A1DF59622A1051CC00165FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = iAquaPulseWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iAquaPulseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iAquaPulseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.iAquaPulseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1DF59632A1051CC00165FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = iAquaPulseWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iAquaPulseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iAquaPulseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.iAquaPulseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1491,7 +1672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6BE4A07528107A59004CB806 /* Build configuration list for PBXNativeTarget "MetronomeZones WatchKit App" */ = {
+		6BE4A07528107A59004CB806 /* Build configuration list for PBXNativeTarget "iAquaPulse WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6BE4A07628107A59004CB806 /* Debug */,
@@ -1541,6 +1722,15 @@
 			buildConfigurations = (
 				6BE4A08628107A59004CB806 /* Debug */,
 				6BE4A08728107A59004CB806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1DF59612A1051CC00165FB2 /* Build configuration list for PBXNativeTarget "iAquaPulseWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DF59622A1051CC00165FB2 /* Debug */,
+				A1DF59632A1051CC00165FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

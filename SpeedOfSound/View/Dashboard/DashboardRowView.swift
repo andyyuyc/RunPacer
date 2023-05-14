@@ -10,11 +10,13 @@ struct DashboardRowView: View {
     let workouts: [HKWorkout]
     let type: HKWorkoutActivityType
     var animation: Namespace.ID
+    var workoutsCount: Int {
+            workouts.count
+        }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             TitleWorkouts(type: type)
-
             Text("你有 \(workouts.count) 個運動紀錄")
                 .font(Font.body.bold())
                 .foregroundColor(Color.white)

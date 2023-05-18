@@ -87,9 +87,7 @@ struct Home: View {
                             ScrollView(.horizontal) {
                                 
                                 HStack(spacing:10) {
-                                    Image("") // 圖片的名稱
-                                        .resizable()
-                                        .frame(width: proxy.size.width*0.3, height: 50)
+                                    
                                     ForEach(drinks) { drink in
                                         Button(action: {
                                 

@@ -13,6 +13,7 @@ struct iAquaPulseWidgetBundle: WidgetBundle {
     var body: some Widget {
         iAquaPulseWidget()
         iAquaPulseWidgetLiveActivity()
+        
     }
 }
 

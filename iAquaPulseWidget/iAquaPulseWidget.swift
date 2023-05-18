@@ -10,7 +10,6 @@ import HealthKit
 import SwiftUI
 
 
-
 struct iAquaPulseWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "com.andyyuyc.iAquaPulse.iAquaPulseWidget", provider: Provider()) { entry in

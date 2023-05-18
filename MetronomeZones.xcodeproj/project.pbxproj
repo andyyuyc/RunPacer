@@ -292,6 +292,7 @@
 		A1A4F0A82A0FE0B20025DA94 /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		A1A4F0A92A0FE0B20025DA94 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1A4F0AA2A0FE0B20025DA94 /* chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chart.swift; sourceTree = "<group>"; };
+		A1B2AFF62A16A62C00A360EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1DF594C2A1051CA00165FB2 /* iAquaPulseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iAquaPulseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DF594D2A1051CA00165FB2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A1DF594F2A1051CA00165FB2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -300,7 +301,6 @@
 		A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAquaPulseWidget.swift; sourceTree = "<group>"; };
 		A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = iAquaPulseWidget.intentdefinition; sourceTree = "<group>"; };
 		A1DF59592A1051CB00165FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1DF595B2A1051CB00165FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1DF59652A10583A00165FB2 /* iAquaPulseWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iAquaPulseWidgetExtension.entitlements; sourceTree = "<group>"; };
 		A1E774B329F891C300412ACA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -701,8 +701,8 @@
 				A1DF59542A1051CA00165FB2 /* iAquaPulseWidgetLiveActivity.swift */,
 				A1DF59562A1051CA00165FB2 /* iAquaPulseWidget.swift */,
 				A1DF59582A1051CA00165FB2 /* iAquaPulseWidget.intentdefinition */,
+				A1B2AFF62A16A62C00A360EB /* Info.plist */,
 				A1DF59592A1051CB00165FB2 /* Assets.xcassets */,
-				A1DF595B2A1051CB00165FB2 /* Info.plist */,
 			);
 			path = iAquaPulseWidget;
 			sourceTree = "<group>";

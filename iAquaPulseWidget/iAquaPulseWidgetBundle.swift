@@ -5,6 +5,7 @@
 //  Created by Andy Yu on 2023/5/13.
 //
 
+
 import WidgetKit
 import SwiftUI
 
@@ -16,4 +17,3 @@ struct iAquaPulseWidgetBundle: WidgetBundle {
         
     }
 }
-

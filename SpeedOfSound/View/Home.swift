@@ -33,37 +33,85 @@ struct Home: View {
                             .opacity(0)
                             .frame(width: 50, height:proxy.size.height*0.1)
                             .cornerRadius(10)
-                        Text("今日補水量")
-                            .font(.system(size: 50))
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         
-                        HStack(alignment: .bottom){
-                            Text("1000").font(.system(size: 80))
-                            Text("ml").font(.system(size: 50))
-                        }
-                        
-                        
-                        Text("今日步数")
-                            .font(.system(size: 50))
-                            .foregroundColor(.black)
-                            .fontWeight(.bold)
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        HStack(alignment: .bottom){
-                            Text("\(stepCount)").font(.system(size: 80))
-                                .foregroundColor(.black)
+                        Text("今天")
+                            .font(.largeTitle)
+                            .font(.footnote)
                             
-                            Text("步").font(.system(size: 40))
-                                .foregroundColor(.black)
-                        }
+                        HStack{
+                            VStack{
+                                Text("目標補水量:")
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                    .padding(.top, 10)
+                                    .padding(.bottom, 10)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                HStack(alignment: .bottom){
+                                    Spacer()
+                                    Text("1000ml／2000ml").font(.system(size: 15))
+                                                                    }
+                            }
+                            Divider()
+                                .padding(.leading)
+                                .padding(.trailing)
+                                .frame(height: 100.0)
+                            
+                            VStack{
+                                Text("目標步数")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.black)
+                                    .fontWeight(.bold)
+                                    .padding(.top, 10)
+                                    .padding(.bottom, 10)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                HStack(alignment: .bottom){
+                                    Spacer()
+                                    Text("\(stepCount) 步／8000步").font(.system(size: 15))
+                                        .foregroundColor(.black)
+                                
+                                }
+                            }
+                        }.padding()
                         
                         
                         Spacer()
+                        ZStack{
+                            
+                            Rectangle()
+                                .foregroundColor(Color.white).opacity(0.8)
+                                .frame(width: proxy.size.width, height: 120)
+                                .cornerRadius(20)
+                                
+                            
+                            ScrollView(.horizontal) {
+                                
+                                HStack(spacing:10) {
+                                    Image("") // 圖片的名稱
+                                        .resizable()
+                                        .frame(width: proxy.size.width*0.3, height: 50)
+                                    ForEach(drinks) { drink in
+                                        Button(action: {
+                                
+                                            self.showWater = true
+                                        }) {
+                                            VStack{
+                                                Image(drink.image)// 圖片的名稱
+                                                    .resizable()
+                                                    .frame(width: 50, height: 50) // 設置圖片大小
+                                                Text(drink.name)
+                                                    .foregroundColor(Color.blue)
+                                                
+                                            }
+                                            
+                                        }
+                                        .padding() // 加上一些間距
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        
                         
                     }
                 }.padding()
@@ -88,7 +136,7 @@ struct Home: View {
                 .repeatForever(autoreverses:false)){
                     startAnimeation = UIScreen.main.bounds.width}
         }.ignoresSafeArea()
-            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(Color("BG"))
+            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background()
         
         
         

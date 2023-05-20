@@ -53,33 +53,24 @@ struct Setting: View {
 
                     }.frame(height: 120)
                     Section("提醒"){
-                        NavigationLink(destination: Water()) {
-                            Label("每日目標", systemImage: "target")
-                        }
                         Toggle("日常喝水提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
                         Toggle("運動喝水提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
+                        Toggle("運動中暑提醒",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
                         
                     }
-                    Section("運動"){
+                    Section("變更目標補水"){
                         NavigationLink(destination: Water()) {
-                            Label("裝置配對", systemImage: "target").foregroundColor(Color.black)
+                            Text("目標自訂" ).foregroundColor(Color.black).accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
                         }
-                        NavigationLink(destination: Water()) {
-                            Label("水杯", systemImage: "target").foregroundColor(Color.black)
-                        }
-                        NavigationLink(destination: Water()) {
-                            Label("含水量", systemImage: "target").foregroundColor(Color.black)
-                        }
+                        Toggle("動態增加目標",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
+                        
                     }
                     Section("飲料"){
                         NavigationLink(destination: Water()) {
-                            Label("排序自訂", systemImage: "target").foregroundColor(Color.black)
+                            Text("飲料排序變更").foregroundColor(Color.black)
                         }
                         NavigationLink(destination: Water()) {
-                            Label("水杯", systemImage: "target").foregroundColor(Color.black)
-                        }
-                        NavigationLink(destination: Water()) {
-                            Label("含水量", systemImage: "target").foregroundColor(Color.black)
+                            Text("含水量").foregroundColor(Color.black)
                         }
                     }
                     
@@ -93,7 +84,7 @@ struct Setting: View {
                 .repeatForever(autoreverses:false)){
                     startAnimeation = UIScreen.main.bounds.width}
         }.ignoresSafeArea()
-            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(Color("BG"))
+            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top)
         
     }
 }

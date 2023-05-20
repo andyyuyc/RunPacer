@@ -60,7 +60,7 @@ struct Water: View {
                                 .padding(20)
                                 
                         }
-                    Image("Empty_Glass")
+                    Image("empty_glass")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.white)

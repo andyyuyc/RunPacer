@@ -90,16 +90,14 @@ struct Home: View {
                                     
                                     ForEach(drinks) { drink in
                                         Button(action: {
-                                
                                             self.showWater = true
                                         }) {
                                             VStack{
                                                 Image(drink.image)// 圖片的名稱
                                                     .resizable()
-                                                    .frame(width: 50, height: 50) // 設置圖片大小
+                                                    .frame(width: 50, height: 50)// 設置圖片大小
                                                 Text(drink.name)
-                                                    .foregroundColor(Color.blue)
-                                                
+                                                    .foregroundColor(Color.black)
                                             }
                                             
                                         }
@@ -130,7 +128,7 @@ struct Home: View {
             
         }
         .onAppear{
-            withAnimation(.linear(duration: 5)
+            withAnimation(.linear(duration: 2)
                 .repeatForever(autoreverses:false)){
                     startAnimeation = UIScreen.main.bounds.width}
         }.ignoresSafeArea()

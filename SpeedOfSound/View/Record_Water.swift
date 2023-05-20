@@ -13,8 +13,6 @@ struct Record_Water: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 35){
-                ZStack{
-                    
                     /*Rectangle()
                      .foregroundColor(Color.white).opacity(0.8)
                      .cornerRadius(20)
@@ -32,16 +30,20 @@ struct Record_Water: View {
                                 Spacer()
                                 Button() {
                                     withAnimation{
-                                        print(currentDate)
                                         currentMonth -= 1
+                                        print(getCurrentMonth())
+                                        print(currentDate)
+                                        print(extraDate())
                                     }
                                 }label: {
                                     Image(systemName: "chevron.left")
                                 }
                                 Button() {
                                     withAnimation{
-                                        print(currentDate)
                                         currentMonth += 1
+                                        print(getCurrentMonth())
+                                        print(extraDate())
+                                        
                                     }
                                     
                                 }label: {
@@ -172,7 +174,7 @@ struct Record_Water: View {
                     
                     
                     
-                }
+                
                 
                 
                 
@@ -234,7 +236,7 @@ struct Record_Water: View {
     func extraDate()->[String]{
         let formatter = DateFormatter()
         formatter.dateFormat="YYYY MMMM"
-        let date = formatter.string(from: currentDate)
+        let date = formatter.string(from: getCurrentMonth())
         
         return date.components(separatedBy: " ")
     }

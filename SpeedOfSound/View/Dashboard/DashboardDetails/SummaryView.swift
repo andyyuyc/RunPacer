@@ -38,6 +38,7 @@ struct SummaryView: View {
                         .frame(minWidth: 150, maxWidth: 900, minHeight: 150, idealHeight: 500, maxHeight: 600, alignment: .center)
                         .id(rowDetailsViewModel.hearRatePercentageData.id)
                         .padding(.vertical)
+                        .foregroundColor(.white)
                 }
                 .frame(height: 150)
             }

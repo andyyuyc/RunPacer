@@ -22,7 +22,11 @@ struct iAquaPulseWidgetAttributes: ActivityAttributes {
 struct iAquaPulseWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: iAquaPulseWidgetAttributes.self) { context in
-            // Lock screen/banner UI goes here
+                    let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+                    let stepCount = sharedDefaults?.integer(forKey: "StepCountKey") ?? 0
+                    let targetWaterAmount = sharedDefaults?.integer(forKey: "TargetWaterAmountKey") ?? 0
+                    
+                    // Lock screen/banner UI goes here
             VStack {
                 Text("Hello")
             }
@@ -31,10 +35,16 @@ struct iAquaPulseWidgetLiveActivity: Widget {
 
         } dynamicIsland: { context in
             DynamicIsland {
+                
+                let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+                let stepCount = sharedDefaults?.integer(forKey: "StepCountKey") ?? 0
+                let targetWaterAmount = sharedDefaults?.integer(forKey: "TargetWaterAmountKey") ?? 0
+                
+                
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text("\(stepCount)")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text("Trailing")

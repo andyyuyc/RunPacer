@@ -43,6 +43,16 @@ struct ContentView: View {
             .toolbarBackground(Color("BG"), for: .tabBar)
             .tag(3)
             
+            NavigationView {
+                Sport()
+            }
+            .tabItem {
+                Image(systemName: "gearshape")
+                Text("Test")
+            }
+            .toolbarBackground(Color("BG"), for: .tabBar)
+            .tag(4)
+            
         }
         .accentColor(.white)
         .onAppear { // 設定初始的背景色

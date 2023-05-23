@@ -133,9 +133,9 @@ final class DashboardDetailsViewModel: ObservableObject {
         }
         let data = PieDataSet(
             dataPoints: [
-                PieChartDataPoint(value: lowPercentage, description: "低於 \(lowPercentage)%"  , colour: .yellow  , label: .label(text: "Lower"  , rFactor: 0.8 )),
-                PieChartDataPoint(value: insidePercentage, description: "區與 \(insidePercentage)%"  , colour: .green   , label: .label(text: "Inside"  , rFactor: 0.8)),
-                PieChartDataPoint(value: highPercentage, description: "高於 \(highPercentage)%", colour: .red, label: .label(text: "Higher", rFactor: 0.8))],
+                PieChartDataPoint(value: lowPercentage, description: "低於 \(lowPercentage)%"  , colour: .yellow  , label: .label(text: ""  , rFactor: 0.8 )),
+                PieChartDataPoint(value: insidePercentage, description: "區與 \(insidePercentage)%"  , colour: .green   , label: .label(text: ""  , rFactor: 0.8)),
+                PieChartDataPoint(value: highPercentage, description: "高於 \(highPercentage)%", colour: .red, label: .label(text: "", rFactor: 0.8))],
             legendTitle: "Data")
 
         return DoughnutChartData(dataSets: data,

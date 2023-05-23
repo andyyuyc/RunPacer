@@ -19,6 +19,7 @@ struct Home: View {
     @State var selectedButton: Int? = nil // 初始值為nil
     @State private var stepCount: Int = 0
     private let healthStore = HKHealthStore()
+    
 
 
     
@@ -120,6 +121,9 @@ struct Home: View {
                     .frame(width: 100, height: 90)
                     .cornerRadius(10)
             }
+            .onAppear {
+                getTodaysSteps()
+            }
             .sheet(isPresented: $showWater) {
                 Water()
             }
@@ -153,6 +157,14 @@ struct Home: View {
     }
     
     private func getTodaysSteps() {
+        
+        
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+        sharedDefaults?.set(stepCount, forKey: "StepCountKey")
+        sharedDefaults?.synchronize()
+        
+        
         let type = HKObjectType.quantityType(forIdentifier: .stepCount)!
         let date = Date()
         let calendar = Calendar.current

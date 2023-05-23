@@ -10,6 +10,9 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
+    
+    
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
     }
@@ -20,11 +23,13 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        
+
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0 ..< 100 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -56,25 +61,31 @@ struct iAquaPulseWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
     
+   
+    
     var body: some View {
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+        
+        let stepCount = sharedDefaults?.integer(forKey: "StepCountKey") ?? 0
+
+        let targetWaterAmount = sharedDefaults?.integer(forKey: "TargetWaterAmountKey") ?? 0
+        
         switch family {
         case .accessoryRectangular:
             ZStack(alignment: .leading) {
                 if #available(iOSApplicationExtension 16.0, *) {
-                    AccessoryWidgetBackground()
+                    
                     
                     HStack(spacing: 10) {
-                        RoundedRectangle(cornerRadius: 5)
-                            .frame(width: 5)
-                            .widgetAccentable()
                         
                         VStack(alignment: .leading) {
-                            Text(entry.configuration.parameter ?? "editable")
+                            Text("补水量: \(targetWaterAmount)ml")
                             
                             
                             switch entry.configuration.enumparameter {
                             case .unknown:
-                                Text("unknown enum")
+                                Text("步数: \(stepCount)")
                             case .first:
                                 Text("first enum")
                             case .second:
@@ -90,17 +101,18 @@ struct iAquaPulseWidgetEntryView : View {
             }
         default:
             VStack(spacing: 20) {
-                Text(entry.configuration.parameter ?? "editable")
+                Text("补水量: \(targetWaterAmount)ml")
+                
                 
                 switch entry.configuration.enumparameter {
                 case .unknown:
-                    Text("unknown enum")
+                    Text("步数: \(stepCount)")
                 case .first:
-                    Text("first enum")
+                    Text("步数: \(stepCount)")
                 case .second:
-                    Text("second enum")
+                    Text("步数: \(stepCount)")
                 default:
-                    Text("default enum")
+                    Text("步数: \(stepCount)")
 
                 }
             }

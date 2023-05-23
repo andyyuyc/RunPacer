@@ -17,6 +17,7 @@ struct Sport: View {
     @State private var stepCount: Int = 0
     private let healthStore = HKHealthStore()
     
+    
     var body: some View {
         ZStack{
             WaterWave(progress: progress, waveHelight: 0.025 , offset: startAnimeation)
@@ -71,6 +72,7 @@ struct Sport: View {
                 .sheet(isPresented: $showWater) {
                     SportWater()
                 }
+                
         }
         .onAppear{
             authorizeHealthKit()
@@ -97,6 +99,14 @@ struct Sport: View {
     }
     
     private func getTodaysSteps() {
+        
+        
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+        sharedDefaults?.set(stepCount, forKey: "StepCountKey")
+        sharedDefaults?.synchronize()
+        
+        
         let type = HKObjectType.quantityType(forIdentifier: .stepCount)!
         let date = Date()
         let calendar = Calendar.current

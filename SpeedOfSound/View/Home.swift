@@ -132,9 +132,9 @@ struct Home: View {
             
         }
         .onAppear{
-            withAnimation(.linear(duration: 2)
+            withAnimation(.linear(duration: 15)
                 .repeatForever(autoreverses:false)){
-                    startAnimeation = UIScreen.main.bounds.width}
+                    startAnimeation = UIScreen.main.bounds.width*10}
         }.ignoresSafeArea()
             .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background()
         

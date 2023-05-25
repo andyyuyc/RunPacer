@@ -76,9 +76,9 @@ struct Water: View {
                             })
                 }.frame(width: size.width,height: size.height,alignment:.center)
                     .onAppear{
-                        withAnimation(.linear(duration: 2)
+                        withAnimation(.linear(duration: 10)
                             .repeatForever(autoreverses:false)){
-                            startAnimeation = size.width}
+                            startAnimeation = size.width*40}
                     }
                 
                 

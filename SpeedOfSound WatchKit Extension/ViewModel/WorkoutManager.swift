@@ -89,12 +89,21 @@ final class WorkoutManager: NSObject, ObservableObject {
     }
     func checkHeartRateWithFeedback() {
 //        guard workoutModel.feedback == .notification else {return}
-        if Int(heartRate) > workoutModel.highBPM { // Hihger than the zone
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+        
+        let stepCount = sharedDefaults?.integer(forKey: "StepCountKey") ?? 0
+        
+        let stepCountIncrement = 300
+        
+        var stepCountAtPreviousCheck = 0
+        
+        if (stepCount - stepCountAtPreviousCheck) >= stepCountIncrement { // Hihger than the zone
             showTooHighFeedback = true
+            
+            stepCountAtPreviousCheck = stepCount
+            
             giveFeedback(message: "Let's slow down, current heart rate at \(heartRate)")
-        } else if Int(heartRate) < workoutModel.lowBPM { // Lower than the zone
-            showTooLowFeedback = true
-            giveFeedback(message: "Let's speed up, current heart rate at \(heartRate)")
         }
     }
     

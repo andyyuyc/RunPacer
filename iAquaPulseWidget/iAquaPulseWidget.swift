@@ -71,6 +71,10 @@ struct iAquaPulseWidgetEntryView : View {
 
         let targetWaterAmount = sharedDefaults?.integer(forKey: "TargetWaterAmountKey") ?? 0
         
+        let notweekColor = Color(red: 118/255, green: 64/255, blue: 239/255, opacity: 1)
+        
+        let activeColor = Color(red: 255/255, green: 74/255, blue: 140/255, opacity: 1)
+        
         switch family {
         case .accessoryRectangular:
             ZStack(alignment: .leading) {
@@ -81,6 +85,7 @@ struct iAquaPulseWidgetEntryView : View {
                         
                         VStack(alignment: .leading) {
                             Text("补水量: \(targetWaterAmount)ml")
+                            
                             
                             
                             switch entry.configuration.enumparameter {
@@ -101,18 +106,49 @@ struct iAquaPulseWidgetEntryView : View {
             }
         default:
             VStack(spacing: 20) {
-                Text("补水量: \(targetWaterAmount)ml")
+                Text("補水量")
+                    .foregroundColor(notweekColor)
+                    .baselineOffset(0.0)
+                    .fontWeight(.bold)
+                    .font(.system(size: 25))
+                    .tracking(1.5)
+                    .lineLimit(1)
+
+                Text("\(targetWaterAmount)mL")
+                    .foregroundColor(notweekColor)
+                    .baselineOffset(0.0)
+                    .fontWeight(.bold)
+                    .font(.system(size: 20))
+                    .tracking(1.5)
+                    .lineLimit(1)
+                    .padding(.top, -15)
                 
                 
                 switch entry.configuration.enumparameter {
                 case .unknown:
-                    Text("步数: \(stepCount)")
+                    Text("步數")
+                        .foregroundColor(activeColor)
+                        .baselineOffset(0.0)
+                        .fontWeight(.bold)
+                        .font(.system(size: 25))
+                        .tracking(1.5)
+                        .lineLimit(1)
+                    
+                    Text("\(stepCount)步")
+                        .foregroundColor(activeColor)
+                        .baselineOffset(0.0)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .tracking(1.5)
+                        .lineLimit(1)
+                        .padding(.top, -15)
+                    
                 case .first:
-                    Text("步数: \(stepCount)")
+                    Text("步數: \(stepCount)")
                 case .second:
-                    Text("步数: \(stepCount)")
+                    Text("步數: \(stepCount)")
                 default:
-                    Text("步数: \(stepCount)")
+                    Text("步數: \(stepCount)")
 
                 }
             }

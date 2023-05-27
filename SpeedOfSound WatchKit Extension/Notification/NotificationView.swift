@@ -13,17 +13,13 @@ struct NotificationView: View {
     var body: some View {
         if message == "Slow" {
             VStack {
-                Image(systemName: "tortoise.fill")
+                Image(systemName: "drop.triangle")
                     .foregroundColor(.yellow)
-                Text("Let's speed up!")
+                    .font(.system(size: 50))
+                    .padding()
+                Text("請及時補水!")
                     .foregroundColor(.yellow)
-            }
-        } else {
-            VStack {
-                Image(systemName: "hare")
-                    .foregroundColor(.red)
-                Text("Slow down!")
-                    .foregroundColor(.red)
+                    .font(.system(size: 20))
             }
         }
     }
@@ -31,6 +27,6 @@ struct NotificationView: View {
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView(message: "Test")
+        NotificationView(message: "Slow")
     }
 }

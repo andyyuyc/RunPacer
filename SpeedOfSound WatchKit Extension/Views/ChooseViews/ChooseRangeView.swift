@@ -2,7 +2,7 @@
 //  ChooseRangeView.swift
 //  SpeedOfSound WatchKit Extension
 //
-//  Created by Anzer Arkin on 16.05.22.
+//  Created by Andy Yu
 //
 
 import SwiftUI

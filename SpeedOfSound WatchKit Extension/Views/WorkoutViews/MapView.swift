@@ -2,7 +2,7 @@
 //  MapView.swift
 //  MetronomeZones WatchKit Extension
 //
-//  Created by Anzer Arkin on 26.05.22.
+//  Created by Andy Yu
 //
 
 import SwiftUI

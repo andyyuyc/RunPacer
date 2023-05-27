@@ -2,7 +2,7 @@
 //  MetricsView.swift
 //  SpeedOfSound WatchKit Extension
 //
-//  Created by Anzer Arkin on 25.04.22.
+//  Created by Andy Yu
 //
 
 import SwiftUI

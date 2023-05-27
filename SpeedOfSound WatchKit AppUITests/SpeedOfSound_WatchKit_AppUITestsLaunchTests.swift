@@ -2,7 +2,7 @@
 //  SpeedOfSound_WatchKit_AppUITestsLaunchTests.swift
 //  SpeedOfSound WatchKit AppUITests
 //
-//  Created by Anzer Arkin on 20.04.22.
+//  Created by Andy Yu
 //
 
 import XCTest

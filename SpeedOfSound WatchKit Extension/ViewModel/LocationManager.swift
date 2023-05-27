@@ -2,7 +2,7 @@
 //  LocationManager.swift
 //  MetronomeZones
 //
-//  Created by Anzer Arkin on 22.05.22.
+//  Created by Andy Yu
 //
 
 import UIKit

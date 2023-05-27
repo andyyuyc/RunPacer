@@ -2,7 +2,7 @@
 //  Set+extensions.swift
 //  MetronomeZones
 //
-//  Created by Anzer Arkin on 19.09.22.
+//  Created by Andy Yu
 //
 
 import SwiftUI

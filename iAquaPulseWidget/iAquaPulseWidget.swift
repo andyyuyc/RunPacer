@@ -2,7 +2,7 @@
 //  EditableWidget.swift
 //  EditableWidget
 //
-//  Created by tigi KIM on 2021/02/25.
+//  Created by Andy Yu
 //
 
 import WidgetKit
@@ -118,7 +118,7 @@ struct iAquaPulseWidgetEntryView : View {
                     .foregroundColor(notweekColor)
                     .baselineOffset(0.0)
                     .fontWeight(.bold)
-                    .font(.system(size: 20))
+                    .font(.system(size: 15))
                     .tracking(1.5)
                     .lineLimit(1)
                     .padding(.top, -15)
@@ -138,7 +138,7 @@ struct iAquaPulseWidgetEntryView : View {
                         .foregroundColor(activeColor)
                         .baselineOffset(0.0)
                         .fontWeight(.bold)
-                        .font(.system(size: 20))
+                        .font(.system(size: 15))
                         .tracking(1.5)
                         .lineLimit(1)
                         .padding(.top, -15)

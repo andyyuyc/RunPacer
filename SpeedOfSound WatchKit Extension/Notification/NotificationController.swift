@@ -2,7 +2,7 @@
 //  NotificationController.swift
 //  SpeedOfSound WatchKit Extension
 //
-//  Created by Anzer Arkin on 20.04.22.
+//  Created by Andy Yu
 //
 
 import WatchKit

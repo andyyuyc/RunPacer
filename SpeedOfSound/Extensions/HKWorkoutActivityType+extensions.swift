@@ -2,7 +2,7 @@
 //  HKWorkoutActivityType+extensions.swift
 //  SpeedOfSound
 //
-//  Created by Anzer Arkin on 03.05.22.
+//  Created by Andy Yu
 //
 
 import Foundation

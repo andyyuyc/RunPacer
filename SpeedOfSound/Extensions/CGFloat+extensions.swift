@@ -2,7 +2,7 @@
 //  CGFloat.swift
 //  SpeedOfSound
 //
-//  Created by Anzer Arkin on 15.05.22.
+//  Created by Andy Yu
 //
 
 import Foundation

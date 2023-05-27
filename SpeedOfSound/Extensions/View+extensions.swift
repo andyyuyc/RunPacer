@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  SpeedOfSound
 //
-//  Created by Anzer Arkin on 02.05.22.
+//  Created by Andy Yu
 //
 import SwiftUI
 import HealthKit

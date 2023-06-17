@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct Water: View {
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     @State var progress: CGFloat = 0.1
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
-    
+    @State var selectedNumber: Int
     @State private var location: CGPoint = .zero
-
     @State private var lastprogress: CGFloat = 0.1
 
     
     var body: some View {
         VStack{
             
+            HStack{
+                Image(drinks[selectedNumber].image)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                VStack(alignment: .leading,spacing:  10){
+                    Text(String(drinks[selectedNumber].name))
+                }
+            }
+            .padding(.vertical,10)
+            .padding(.horizontal)
+            .frame(maxWidth:.infinity,alignment:.leading)
             Spacer()
-            Color.white
-                .opacity(0)
-                .frame(width: 100, height: 100)
-                .cornerRadius(10)
             GeometryReader{ proxy in
                 let size = proxy.size
-                
+    
                 ZStack{
                     WaterWave(progress: progress, waveHelight: 0.05 , offset: startAnimeation)
                         .fill(Color("Blue"))
@@ -70,6 +78,12 @@ struct Water: View {
                             .onChanged { value in
                                 let translation = value.translation.height/proxy.size.height
                                 progress = lastprogress - translation
+                                if(progress>=1){
+                                    progress=1
+                                }
+                                if(progress<0){
+                                    progress=0
+                                }
                             }
                             .onEnded { value in
                                 lastprogress = progress
@@ -83,17 +97,25 @@ struct Water: View {
                 
                 
             }
-            Text("200 ml")
+            Text("\(progress*500, specifier: "%.0f") ml")
                 .font(.largeTitle).padding()
             HStack{
                 Button(action: {
                     // 在這裡添加按鈕被點擊時的操作
+                    selectedNumber = selectedNumber+1
                 }) {
                    
                         
                 }
                 Button(action: {
                     change = change == 0  ? 1 : 0
+                    let testCD = CDdrink_item(context: moc)
+                    testCD.id = UUID()
+                    testCD.drink_num = Int64(selectedNumber)
+                    testCD.ml = Int64(progress*500)
+                    
+                    try? moc.save()
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("喝水")
                         .font(.largeTitle)
@@ -113,7 +135,7 @@ struct Water: View {
 
 struct Water_Previews: PreviewProvider {
     static var previews: some View {
-        Water()
+        Water(selectedNumber: 0)
     }
 }
 

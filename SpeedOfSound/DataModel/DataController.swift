@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject{
-    let container = NSPersistentContainer(name: "Drink_coredata")
+    let container = NSPersistentContainer(name: "Model")
     
     init() {
         container.loadPersistentStores{desc,error in
@@ -28,7 +28,7 @@ class DataController: ObservableObject{
         }
     }
     
-    func addFood(nmae: String, calories: Double, context: NSManagedObjectContext){
+    /*func addFood(nmae: String, calories: Double, context: NSManagedObjectContext){
         let drink = Drink_coredaata(context: context)
         drink.id=UUID()
         drink.name = "水"
@@ -37,7 +37,7 @@ class DataController: ObservableObject{
         drink.image = "glass-of-water"
         
         save(context: context)
-    }
+    }*/
     
    
     

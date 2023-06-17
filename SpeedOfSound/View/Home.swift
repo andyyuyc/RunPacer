@@ -16,7 +16,7 @@ struct Home: View {
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
     @State private var showWater = false
-    @State var selectedButton: Int? = nil // 初始值為nil
+    @State var selectedButton: Int = 0 // 初始值為nil
     @State private var stepCount: Int = 0
     private let healthStore = HKHealthStore()
     
@@ -88,10 +88,10 @@ struct Home: View {
                             ScrollView(.horizontal) {
                                 
                                 HStack(spacing:10) {
-                                    
-                                    ForEach(drinks) { drink in
+                                    ForEach(Array(drinks.enumerated()), id: \.offset) { index, drink in
                                         Button(action: {
                                             self.showWater = true
+                                            selectedButton = index
                                         }) {
                                             VStack{
                                                 Image(drink.image)// 圖片的名稱
@@ -125,7 +125,7 @@ struct Home: View {
                 getTodaysSteps()
             }
             .sheet(isPresented: $showWater) {
-                Water()
+                Water(selectedNumber: selectedButton)
             }
             
             

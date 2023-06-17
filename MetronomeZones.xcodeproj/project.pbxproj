@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58E89CE02A1E0C1700484C19 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58E89CDE2A1E0C1700484C19 /* Model.xcdatamodeld */; };
 		58E89CE22A1E0DE300484C19 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E89CE12A1E0DE300484C19 /* DataController.swift */; };
+		58F78DCC2A3DFC3600B3BB09 /* CDdrink_item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DC82A3DFC3600B3BB09 /* CDdrink_item+CoreDataClass.swift */; };
+		58F78DCD2A3DFC3600B3BB09 /* CDdrink_item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DC92A3DFC3600B3BB09 /* CDdrink_item+CoreDataProperties.swift */; };
+		58F78DCE2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DCA2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataClass.swift */; };
+		58F78DCF2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DCB2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataProperties.swift */; };
+		58F78DD12A3E024200B3BB09 /* testCoredataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DD02A3E024200B3BB09 /* testCoredataView.swift */; };
+		58F78DD82A3E086900B3BB09 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58F78DD62A3E086900B3BB09 /* Model.xcdatamodeld */; };
 		6B305DAB28145B5100D877CB /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B305DAA28145B5100D877CB /* Click.mp3 */; };
 		6B305DAF28145B8500D877CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B305DAE28145B8500D877CB /* PlayerView.swift */; };
 		6B305DB128145CBA00D877CB /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B305DB028145CBA00D877CB /* PlayerViewModel.swift */; };
@@ -195,8 +200,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		58E89CDF2A1E0C1700484C19 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		58E89CE12A1E0DE300484C19 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		58F78DC82A3DFC3600B3BB09 /* CDdrink_item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDdrink_item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		58F78DC92A3DFC3600B3BB09 /* CDdrink_item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDdrink_item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58F78DCA2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDrinkMetaData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		58F78DCB2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDrinkMetaData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58F78DD02A3E024200B3BB09 /* testCoredataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCoredataView.swift; sourceTree = "<group>"; };
+		58F78DD72A3E086900B3BB09 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6B305DAA28145B5100D877CB /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
 		6B305DAE28145B8500D877CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		6B305DB028145CBA00D877CB /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
@@ -374,7 +384,7 @@
 		58E89CDD2A1E0BD200484C19 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				58E89CDE2A1E0C1700484C19 /* Model.xcdatamodeld */,
+				58F78DD62A3E086900B3BB09 /* Model.xcdatamodeld */,
 				58E89CE12A1E0DE300484C19 /* DataController.swift */,
 			);
 			path = DataModel;
@@ -409,6 +419,7 @@
 		6B305DC42815859600D877CB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				58F78DD02A3E024200B3BB09 /* testCoredataView.swift */,
 				A1A4F0AA2A0FE0B20025DA94 /* chart.swift */,
 				A1A4F0A92A0FE0B20025DA94 /* ContentView.swift */,
 				A1A4F0A22A0FE0B20025DA94 /* date.swift */,
@@ -574,6 +585,10 @@
 		6BE4A00B28107A54004CB806 = {
 			isa = PBXGroup;
 			children = (
+				58F78DC82A3DFC3600B3BB09 /* CDdrink_item+CoreDataClass.swift */,
+				58F78DC92A3DFC3600B3BB09 /* CDdrink_item+CoreDataProperties.swift */,
+				58F78DCA2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataClass.swift */,
+				58F78DCB2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataProperties.swift */,
 				A1DF59652A10583A00165FB2 /* iAquaPulseWidgetExtension.entitlements */,
 				A104A4B729F7061500F761BF /* MetronomeZones-WatchKit-App-Info.plist */,
 				6BE4A01628107A54004CB806 /* SpeedOfSound */,
@@ -1006,6 +1021,7 @@
 				6B5D829028328EC300988547 /* HeartRateRangeView.swift in Sources */,
 				6B436F2828314DAA00CB5655 /* CadenceView.swift in Sources */,
 				A1A4F0B32A0FE0B20025DA94 /* Setting.swift in Sources */,
+				58F78DD12A3E024200B3BB09 /* testCoredataView.swift in Sources */,
 				58E89CE22A1E0DE300484C19 /* DataController.swift in Sources */,
 				6B5E1C90283A87F500267A40 /* FeedbackDetailView.swift in Sources */,
 				A1DF59662A105CDB00165FB2 /* iAquaPulseWidget.swift in Sources */,
@@ -1019,10 +1035,13 @@
 				6B305DD22815E47900D877CB /* SessionDelegater.swift in Sources */,
 				6B4434BF28259144006CBA12 /* DashboardDetailsViewModel.swift in Sources */,
 				6BE4A01A28107A54004CB806 /* ContentView_1.swift in Sources */,
+				58F78DCC2A3DFC3600B3BB09 /* CDdrink_item+CoreDataClass.swift in Sources */,
 				6B305DAF28145B8500D877CB /* PlayerView.swift in Sources */,
 				6B8877E428D8CA4F0008A56F /* Set+extensions.swift in Sources */,
+				58F78DCD2A3DFC3600B3BB09 /* CDdrink_item+CoreDataProperties.swift in Sources */,
 				6B3402D3282107E700C71216 /* DashboardViewModel.swift in Sources */,
 				6B305DB128145CBA00D877CB /* PlayerViewModel.swift in Sources */,
+				58F78DCE2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataClass.swift in Sources */,
 				6B3402C0281EEBD400C71216 /* MetronomeModel.swift in Sources */,
 				6B3E0F632869E86D0048A531 /* MoreWorkoutView.swift in Sources */,
 				6B3402AF281DA46A00C71216 /* DashboardView.swift in Sources */,
@@ -1045,11 +1064,12 @@
 				A1CBFE312A1C98B40096B4D7 /* Sport.swift in Sources */,
 				A1A4F0B52A0FE0B20025DA94 /* ContentView.swift in Sources */,
 				6B3402CC281FE40200C71216 /* View+extensions.swift in Sources */,
+				58F78DCF2A3DFC3600B3BB09 /* CDDrinkMetaData+CoreDataProperties.swift in Sources */,
 				6B46836128217DCB0048E20B /* HKWorkoutActivityType+extensions.swift in Sources */,
 				6B46836728217EDE0048E20B /* Text+extensions.swift in Sources */,
-				58E89CE02A1E0C1700484C19 /* Model.xcdatamodeld in Sources */,
 				A1A4F0AE2A0FE0B20025DA94 /* date.swift in Sources */,
 				6B46836528217E5F0048E20B /* Array+extensions.swift in Sources */,
+				58F78DD82A3E086900B3BB09 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,12 +1857,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		58E89CDE2A1E0C1700484C19 /* Model.xcdatamodeld */ = {
+		58F78DD62A3E086900B3BB09 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				58E89CDF2A1E0C1700484C19 /* Model.xcdatamodel */,
+				58F78DD72A3E086900B3BB09 /* Model.xcdatamodel */,
 			);
-			currentVersion = 58E89CDF2A1E0C1700484C19 /* Model.xcdatamodel */;
+			currentVersion = 58F78DD72A3E086900B3BB09 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

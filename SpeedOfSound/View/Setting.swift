@@ -59,17 +59,17 @@ struct Setting: View {
                         
                     }
                     Section("變更目標補水"){
-                        NavigationLink(destination: Water()) {
+                        NavigationLink(destination: Sport()) {
                             Text("目標自訂" ).foregroundColor(Color.black).accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
                         }
                         Toggle("動態增加目標",isOn: $toggleIsOn).toggleStyle(SwitchToggleStyle(tint: .cyan))
                         
                     }
                     Section("飲料"){
-                        NavigationLink(destination: Water()) {
+                        NavigationLink(destination: Sport()) {
                             Text("飲料排序變更").foregroundColor(Color.black)
                         }
-                        NavigationLink(destination: Water()) {
+                        NavigationLink(destination: Sport()) {
                             Text("含水量").foregroundColor(Color.black)
                         }
                     }

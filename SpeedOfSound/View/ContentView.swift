@@ -44,7 +44,7 @@ struct ContentView: View {
             .tag(3)
             
             NavigationView {
-                Sport()
+                testCoredata()
             }
             .tabItem {
                 Image(systemName: "gearshape")

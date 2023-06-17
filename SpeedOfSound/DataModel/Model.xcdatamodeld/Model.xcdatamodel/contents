@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDdrink_item" representedClassName="CDdrink_item" syncable="YES">
+        <attribute name="drink_num" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ml" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="relationship_Metadata" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDDrinkMetaData" inverseName="relationship_drinkitem" inverseEntity="CDDrinkMetaData"/>
+    </entity>
+    <entity name="CDDrinkMetaData" representedClassName="CDDrinkMetaData" syncable="YES">
+        <attribute name="float" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="relationship_drinkitem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDdrink_item" inverseName="relationship_Metadata" inverseEntity="CDdrink_item"/>
+    </entity>
     <entity name="Drink_coredaata" representedClassName="Drink_coredaata" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct Water: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
@@ -114,6 +114,34 @@ struct Water: View {
                     testCD.drink_num = Int64(selectedNumber)
                     testCD.ml = Int64(progress*500)
                     
+                    let predicate = NSPredicate(format: "float == 0")
+                    let fetchRequest: NSFetchRequest<CDDrinkMetaData> = CDDrinkMetaData.fetchRequest()
+                    fetchRequest.predicate = predicate
+                    
+                    do {
+                        let results = try moc.fetch(fetchRequest)
+                        
+                        if let drinkMetaData = results.first {
+                            drinkMetaData.addToRelationship_drinkitem(testCD)
+                            
+                            try moc.save()
+                            
+                            print("Drink added to CDDrinkMetaData successfully.")
+                            let dataController = DataController()
+                            let count = dataController.getDrinkMetaDataCount()
+                            print("Number of CDDrinkMetaData records: \(count)")
+                            let drinkItemCount = dataController.getDrinkItemCount(for: drinkMetaData)
+                            print("Number of CDDrinkItem records in drinkMetaData: \(drinkItemCount)")
+                        } else {
+                            let testCDDrinkMetaData = CDDrinkMetaData(context: moc)
+                            testCDDrinkMetaData.float = 0
+                            testCDDrinkMetaData.addToRelationship_drinkitem(testCD)
+                            try? moc.save()
+                            print("CDDrinkMetaData not found.")
+                        }
+                    } catch {
+                        print("Failed to search CDDrinkMetaData: \(error)")
+                    }
                     try? moc.save()
                     presentationMode.wrappedValue.dismiss()
                 }) {

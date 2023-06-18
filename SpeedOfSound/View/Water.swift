@@ -62,13 +62,13 @@ struct Water: View {
                             }
                         })
                         .mask {
-                            Image("glass-of-water")
+                            Image(drinks[selectedNumber].image)
                                 .resizable()
                                 .aspectRatio( contentMode: .fit)
                                 .padding(20)
                                 
                         }
-                    Image("empty_glass")
+                    Image("empty_"+drinks[selectedNumber].image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.white)

@@ -28,17 +28,18 @@ class DataController: ObservableObject{
         }
     }
     
-    /*func addFood(nmae: String, calories: Double, context: NSManagedObjectContext){
-        let drink = Drink_coredaata(context: context)
-        drink.id=UUID()
-        drink.name = "水"
-        drink.proportion=1
-        drink.color = "Color.blue"
-        drink.image = "glass-of-water"
+    func getDrinkMetaDataCount() -> Int {
+        let fetchRequest: NSFetchRequest<CDDrinkMetaData> = CDDrinkMetaData.fetchRequest()
         
-        save(context: context)
-    }*/
-    
-   
-    
+        do {
+            let count = try container.viewContext.count(for: fetchRequest)
+            return count
+        } catch {
+            print("Failed to fetch CDDrinkMetaData count: \(error)")
+            return 0
+        }
+    }
+    func getDrinkItemCount(for metaData: CDDrinkMetaData) -> Int {
+        return metaData.relationship_drinkitem?.count ?? 0
+    }
 }

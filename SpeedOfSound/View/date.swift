@@ -57,10 +57,12 @@ struct DrinkMetaData: Identifiable{
 }
 var drinks_recrod: [DrinkMetaData] = [
     DrinkMetaData (drink: [
+    ], drinkDate: getSampleDate(offset: 0)),
+    DrinkMetaData (drink: [
         Drink_recrod(num: 0, ml: 100),
         Drink_recrod(num: 2, ml: 200),
         Drink_recrod(num: 3, ml: 300)
-    ], drinkDate: getSampleDate(offset: 0)),
+    ], drinkDate: getSampleDate(offset: -1)),
     DrinkMetaData (drink: [
         Drink_recrod(num: 0, ml: 100),
     ], drinkDate: getSampleDate(offset: -3)),
@@ -71,7 +73,7 @@ var drinks_recrod: [DrinkMetaData] = [
     
     DrinkMetaData (drink: [
         Drink_recrod(num: 6, ml: 100),
-    ], drinkDate: getSampleDate(offset: 10)),
+    ], drinkDate: getSampleDate(offset: -10)),
     
     DrinkMetaData (drink: [
         Drink_recrod(num: 7, ml: 100),
@@ -79,7 +81,7 @@ var drinks_recrod: [DrinkMetaData] = [
     
     DrinkMetaData (drink: [
         Drink_recrod(num: 0, ml: 100),
-    ], drinkDate: getSampleDate(offset: 15)),
+    ], drinkDate: getSampleDate(offset: -15)),
     
     DrinkMetaData (drink: [
         Drink_recrod(num: 1, ml: 100),

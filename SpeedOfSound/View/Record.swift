@@ -18,7 +18,7 @@ struct Record: View {
             case .view1:
                 return AnyView(Record_Water())
             case .view2:
-                return AnyView(Text("View 2"))
+                return AnyView(Record_Water2())
                 
             }
         }

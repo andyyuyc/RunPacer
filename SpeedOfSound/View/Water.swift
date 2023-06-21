@@ -38,7 +38,7 @@ struct Water: View {
     
                 ZStack{
                     WaterWave(progress: progress, waveHelight: 0.05 , offset: startAnimeation)
-                        .fill(Color("Blue"))
+                        .fill(Color(drinks[selectedNumber].color))
                         .overlay(content:{
                             ZStack{
                                 Circle().fill(.white.opacity(0.4))

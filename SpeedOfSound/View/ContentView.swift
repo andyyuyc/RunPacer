@@ -82,7 +82,7 @@ func scheduleLocalNotification() {
        dateComponents.hour = 12
        let nextNoon = calendar.nextDate(after: now, matching: dateComponents, matchingPolicy: .nextTime)
        
-       let trigger = UNCalendarNotificationTrigger(dateMatching: calendar.dateComponents([.year, .month, .day, .hour], from: nextNoon!), repeats: true)
+       /*let trigger = UNCalendarNotificationTrigger(dateMatching: calendar.dateComponents([.year, .month, .day, .hour], from: nextNoon!), repeats: true)
        
        let request = UNNotificationRequest(identifier: "FunctionExecution", content: content, trigger: trigger)
        
@@ -92,5 +92,5 @@ func scheduleLocalNotification() {
            } else {
                print("Local notification scheduled.")
            }
-       }
+       }*/
    }

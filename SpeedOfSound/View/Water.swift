@@ -84,6 +84,7 @@ struct Water: View {
                                 if(progress<0){
                                     progress=0
                                 }
+                                print(progress)
                             }
                             .onEnded { value in
                                 lastprogress = progress

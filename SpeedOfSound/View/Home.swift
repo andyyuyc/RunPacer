@@ -8,25 +8,29 @@
 import Foundation
 import SwiftUI
 import HealthKit
-
+import CoreData
 
 struct Home: View {
-    
+    @Environment(\.managedObjectContext) var moc
     @State var progress: CGFloat = 0.2
     @State var startAnimeation: CGFloat = 0
     @State var change: Int = 0
     @State private var showWater = false
     @State var selectedButton: Int = 0 // 初始值為nil
     @State private var stepCount: Int = 0
+    @State var result = 0
     private let healthStore = HKHealthStore()
+    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
-
+    
 
     
     var body: some View {
         ZStack{
             WaterWave(progress: progress, waveHelight: 0.025 , offset: startAnimeation)
                 .fill(Color.blue)
+                
+                
             VStack{
                 GeometryReader{ proxy in
                     VStack(alignment: .center){
@@ -50,7 +54,7 @@ struct Home: View {
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 HStack(alignment: .bottom){
                                     Spacer()
-                                    Text("1000ml／2000ml").font(.system(size: 15))
+                                    Text("\(result)ml／2000 ml").font(.system(size: 15))
                                                                     }
                             }
                             Divider()
@@ -121,15 +125,36 @@ struct Home: View {
                     .frame(width: 100, height: 90)
                     .cornerRadius(10)
             }
+            
             .onAppear {
                 getTodaysSteps()
+                
+                result = checkCondition()
+                if result == 0 {
+                    progress = 0.2
+                } else {
+                    progress = 0.2 + CGFloat(result)/2000*0.8
+                }
+                        
+                print(progress)
             }
-            .sheet(isPresented: $showWater) {
+            .sheet(isPresented: $showWater, onDismiss: {
+                // 在 sheet 關閉時執行的動作
+                print("Sheet Dismissed")
+                result = checkCondition()
+                // 可以在這裡更新頁面上的其他狀態或執行其他需要的操作
+            }) {
                 Water(selectedNumber: selectedButton)
+                
             }
             
             
             
+        }.onReceive(timer) { _ in
+            if progress <  0.2 + CGFloat(result)/2000.0*0.8 {
+                progress = progress+0.003
+                print(progress)
+            }
         }
         .onAppear{
             withAnimation(.linear(duration: 15)
@@ -186,6 +211,35 @@ struct Home: View {
             }
         }
         healthStore.execute(query)
+    }
+    func checkCondition() -> Int {
+        // 在此處添加您的條件檢查邏輯
+        let predicate = NSPredicate(format: "float == 0")
+        let fetchRequest: NSFetchRequest<CDDrinkMetaData> = CDDrinkMetaData.fetchRequest()
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = 1
+
+        do {
+            let results = try moc.fetch(fetchRequest)
+            var sum = 0
+            if let firstObject = results.first {
+                // 在此處使用符合條件的第一個物件
+                print("Found first object: \(firstObject)")
+                if let drinkItems = firstObject.relationship_drinkitem?.allObjects as? [CDdrink_item] {
+                    for drinkItem in drinkItems {
+                        sum += Int(drinkItem.ml)
+                    }
+                }
+                result = sum
+                return sum
+            } else {
+                print("No objects found.")
+                return 0
+            }
+        } catch {
+            print("Failed to fetch objects: \(error)")
+        }
+        return 0
     }
 }
 

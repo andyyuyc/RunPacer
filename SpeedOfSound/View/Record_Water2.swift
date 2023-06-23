@@ -1,17 +1,15 @@
 //
-//  SwiftUIView.swift
-//  AquaPulse
+//  CustomDatePicker.swift
+//  Water
 //
-//  Created by 許桓菘 on 2023/6/18.
+//  Created by 許桓菘 on 2023/4/29.
 //
-import CoreData
+
 import SwiftUI
+
 struct Record_Water2: View {
     @State var currentDate: Date = Date()
     @State var currentMonth: Int = 0
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var drink_test: FetchedResults<CDdrink_item>
-    @FetchRequest(sortDescriptors: []) var DrinkMetaData_test: FetchedResults<CDDrinkMetaData>
     var body: some View {
         ScrollView {
             VStack(spacing: 35){
@@ -84,35 +82,59 @@ struct Record_Water2: View {
                                     .cornerRadius(10)
                             )
                         
+                        /*HStack{
+                            VStack {
+                                Text("喝水量")
+                                    .font(.title3)
+                                
+                                Spacer()
+                                Text("100 mL")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    
+                            }
+                            Spacer()
+                            VStack{
+                                Text("目標")
+                                    .font(.title3)
+                                    
+                                Spacer()
+                                Text("10％")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    
+                            }
+                        }.padding()
+                        .padding().frame(maxWidth:.infinity,alignment:.leading)
+                        .background(
+                            Color.white
+                                .cornerRadius(10)
+                        )*/
                         
                         VStack(spacing: 15){
                             Text("Drinks").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
-                            
-                            if let drink = DrinkMetaData_test.first(where: { drink in
-                                return isSameDay(date1: getSampleDate(offset: Int(drink.float)), date2: currentDate)
-                            }){
-                                ForEach(drink.relationship_drinkitem?.allObjects as? [CDdrink_item] ?? [], id: \.self) { drinkItem in
-                                    HStack{
-                                        Image(drinks[Int(drinkItem.drink_num)].image)
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                        VStack(alignment: .leading,spacing:  10){
-                                            Text(String(drinks[Int(drinkItem.drink_num)].name))
-                                            
-                                            Text(String(Int(drinkItem.ml))).font(.title2.bold())
-                                        }
-                                    }
-                                    .padding(.vertical,10)
-                                    .padding(.horizontal)
-                                    .frame(maxWidth:.infinity,alignment:.leading)
-                                    .background(
-                                        Color.white
-                                            .cornerRadius(10)
-                                    )
-                                }
-                                    
-                            }
-                                
+                            /*if let task = tasks.first(where: { task in
+                             return isSameDay(date1: task.taskDate, date2: currentDate)
+                             }){
+                             ForEach(task.task){task in
+                             
+                             VStack(alignment: .leading,spacing:  10){
+                             Text(task.time
+                             .addingTimeInterval(CGFloat
+                             .random(in: 0...5000)),style: .time)
+                             Text(task.title).font(.title2.bold())
+                             }.padding(.vertical,10)
+                             .padding(.horizontal)
+                             .frame(maxWidth:.infinity,alignment:.leading)
+                             .background(
+                             Color.blue.opacity(0.5)
+                             .cornerRadius(10)
+                             )
+                             }
+                             }else{
+                             Text("No drink Found")
+                             }*/
+                            ///
                             if let drink = drinks_recrod.first(where: { drink in
                                 return isSameDay(date1: drink.drinkDate, date2: currentDate)
                             }){
@@ -250,8 +272,22 @@ struct Record_Water2: View {
 
 struct Record_Water2_Previews: PreviewProvider {
     static var previews: some View {
-        Record_Water2()
+        Record_Water()
     }
 }
 
+
+extension Date{
+    func getAllDate()->[Date]{
+        let calendar = Calendar.current
+        let startDate = calendar.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
+        
+        let range = calendar.range(of: .day, in: .month, for: startDate)!
+        
+        
+        return range.compactMap{day -> Date in
+            return calendar.date(byAdding: .day,value: day - 1 , to: startDate)!
+        }
+    }
+}
 

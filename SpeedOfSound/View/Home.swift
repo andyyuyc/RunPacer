@@ -74,6 +74,7 @@ struct Home: View {
                                     Spacer()
                                     Text("\(stepCount) 步／8000步").font(.system(size: 15))
                                         .foregroundColor(.black)
+                                        
                                 
                                 }
                             }

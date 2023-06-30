@@ -29,7 +29,7 @@ struct Provider: IntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 100 {
+        for hourOffset in 0 ..< 10 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -57,12 +57,14 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
+@available(iOS 17.0, *)
 struct iAquaPulseWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
     
    
     
+    @available(iOS 17.0, *)
     var body: some View {
         
         let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
@@ -85,18 +87,33 @@ struct iAquaPulseWidgetEntryView : View {
                         
                         VStack(alignment: .leading) {
                             Text("补水量: \(targetWaterAmount)ml")
+                                .containerBackground(for: . widget) {
+                                Color.white
+                                }
                             
                             
                             
                             switch entry.configuration.enumparameter {
                             case .unknown:
                                 Text("步数: \(stepCount)")
+                                    .containerBackground(for: . widget) {
+                                    Color.white
+                                    }
                             case .first:
                                 Text("first enum")
+                                    .containerBackground(for: . widget) {
+                                    Color.white
+                                    }
                             case .second:
                                 Text("second enum")
+                                    .containerBackground(for: . widget) {
+                                    Color.white
+                                    }
                             default:
                                 Text("default enum")
+                                    .containerBackground(for: . widget) {
+                                    Color.white
+                                    }
                                 
                             }
                         }
@@ -113,6 +130,10 @@ struct iAquaPulseWidgetEntryView : View {
                     .font(.system(size: 25))
                     .tracking(1.5)
                     .lineLimit(1)
+                    .containerBackground(for: . widget) {
+                    Color.white
+                    }
+                
 
                 Text("\(targetWaterAmount)mL")
                     .foregroundColor(notweekColor)
@@ -122,6 +143,9 @@ struct iAquaPulseWidgetEntryView : View {
                     .tracking(1.5)
                     .lineLimit(1)
                     .padding(.top, -15)
+                    .containerBackground(for: . widget) {
+                    Color.white
+                    }
                 
                 
                 switch entry.configuration.enumparameter {
@@ -133,6 +157,10 @@ struct iAquaPulseWidgetEntryView : View {
                         .font(.system(size: 25))
                         .tracking(1.5)
                         .lineLimit(1)
+                        .containerBackground(for: . widget) {
+                        Color.white
+                        }
+                        
                     
                     Text("\(stepCount)步")
                         .foregroundColor(activeColor)
@@ -142,13 +170,25 @@ struct iAquaPulseWidgetEntryView : View {
                         .tracking(1.5)
                         .lineLimit(1)
                         .padding(.top, -15)
+                        .containerBackground(for: . widget) {
+                        Color.white
+                        }
                     
                 case .first:
                     Text("步數: \(stepCount)")
+                        .containerBackground(for: . widget) {
+                        Color.white
+                        }
                 case .second:
                     Text("步數: \(stepCount)")
+                        .containerBackground(for: . widget) {
+                        Color.white
+                        }
                 default:
                     Text("步數: \(stepCount)")
+                        .containerBackground(for: . widget) {
+                        Color.white
+                        }
 
                 }
             }
@@ -157,6 +197,7 @@ struct iAquaPulseWidgetEntryView : View {
 }
 
 
+@available(iOS 17.0, *)
 struct iAquaPulseWidget: Widget {
     let kind: String = "iAquaPulseWidget"
 
@@ -187,6 +228,7 @@ struct iAquaPulseWidget: Widget {
 }
 
 
+@available(iOS 17.0, *)
 struct iAquaPulseWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -196,19 +238,23 @@ struct iAquaPulseWidget_Previews: PreviewProvider {
                     .previewDisplayName("accessoryRectangular")
             }
             
+            if #available(iOS 17.0, *) {
 #if os(iOS)
-            iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .previewDisplayName("systemSmall")
-            
-            iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-                .previewDisplayName("systemMedium")
-            
-            iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-                .previewContext(WidgetPreviewContext(family: .systemLarge))
-                .previewDisplayName("systemLarge")
+                iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                    .previewContext(WidgetPreviewContext(family: .systemSmall))
+                    .previewDisplayName("systemSmall")
+                
+                iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                    .previewContext(WidgetPreviewContext(family: .systemMedium))
+                    .previewDisplayName("systemMedium")
+                
+                iAquaPulseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                    .previewContext(WidgetPreviewContext(family: .systemLarge))
+                    .previewDisplayName("systemLarge")
 #endif
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }

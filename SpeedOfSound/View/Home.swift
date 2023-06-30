@@ -18,7 +18,7 @@ struct Home: View {
     @State private var showWater = false
     @State var selectedButton: Int = 0 // 初始值為nil
     @State private var stepCount: Int = 0
-    @State var result = 0
+    @State private var result = 0
     private let healthStore = HKHealthStore()
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
@@ -55,6 +55,7 @@ struct Home: View {
                                 HStack(alignment: .bottom){
                                     Spacer()
                                     Text("\(result)ml／2000 ml").font(.system(size: 15))
+                                    
                                                                     }
                             }
                             Divider()
@@ -188,7 +189,9 @@ struct Home: View {
         
         let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
         sharedDefaults?.set(stepCount, forKey: "StepCountKey")
+        sharedDefaults?.set(result, forKey: "ResultKey")
         sharedDefaults?.synchronize()
+        
         
         
         let type = HKObjectType.quantityType(forIdentifier: .stepCount)!
@@ -214,6 +217,10 @@ struct Home: View {
         healthStore.execute(query)
     }
     func checkCondition() -> Int {
+        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
+        sharedDefaults?.set(result, forKey: "ResultKey")
+        sharedDefaults?.synchronize()
+        
         // 在此處添加您的條件檢查邏輯
         let predicate = NSPredicate(format: "float == 0")
         let fetchRequest: NSFetchRequest<CDDrinkMetaData> = CDDrinkMetaData.fetchRequest()

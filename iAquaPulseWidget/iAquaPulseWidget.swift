@@ -29,7 +29,7 @@ struct Provider: IntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 10 {
+        for hourOffset in 0 ..< 60 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -70,6 +70,8 @@ struct iAquaPulseWidgetEntryView : View {
         let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
         
         let stepCount = sharedDefaults?.integer(forKey: "StepCountKey") ?? 0
+        
+        let result = sharedDefaults?.integer(forKey: "ResultKey") ?? 0
 
         let targetWaterAmount = sharedDefaults?.integer(forKey: "TargetWaterAmountKey") ?? 0
         
@@ -86,7 +88,7 @@ struct iAquaPulseWidgetEntryView : View {
                     HStack(spacing: 10) {
                         
                         VStack(alignment: .leading) {
-                            Text("补水量: \(targetWaterAmount)ml")
+                            Text("补水量: \(result)ml")
                                 .containerBackground(for: . widget) {
                                 Color.white
                                 }

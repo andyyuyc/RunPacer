@@ -16,7 +16,6 @@ struct Water: View {
     @State var selectedNumber: Int
     @State private var location: CGPoint = .zero
     @State private var lastprogress: CGFloat = 0.1
-
     
     var body: some View {
         VStack{
@@ -144,7 +143,9 @@ struct Water: View {
                         print("Failed to search CDDrinkMetaData: \(error)")
                     }
                     try? moc.save()
+                   
                     presentationMode.wrappedValue.dismiss()
+                    
                 }) {
                     Text("喝水")
                         .font(.largeTitle)
@@ -154,6 +155,7 @@ struct Water: View {
                         .background(Color.blue)
                         .cornerRadius(100)
                 }.padding()
+                    
             }
             
 

@@ -45,17 +45,22 @@ struct Home: View {
                             
                         HStack{
                             VStack{
-                                Text("目標補水量:")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                                    .padding(.top, 10)
-                                    .padding(.bottom, 10)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                HStack{
+                                    Image(systemName: "drop.fill").font(.system(size: 20))
+                                    Text("目標補水量:")
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                        .padding(.top, 10)
+                                        .padding(.bottom, 10)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                }
+                                
                                 HStack(alignment: .bottom){
                                     Spacer()
-                                    Text("\(result)ml／2000 ml").font(.system(size: 15))
-                                    
+                                    Text("\(result)").font(.system(size: 20))
+                                    Text("ml／2000 ml").font(.system(size: 12))
+                    
                                                                     }
                             }
                             Divider()
@@ -64,18 +69,23 @@ struct Home: View {
                                 .frame(height: 100.0)
                             
                             VStack{
-                                Text("目標步数")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.black)
-                                    .fontWeight(.bold)
-                                    .padding(.top, 10)
-                                    .padding(.bottom, 10)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                HStack{
+                                    Image(systemName: "figure.run").font(.system(size: 20))
+                                    Text("目標步数")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(.black)
+                                        .fontWeight(.bold)
+                                        .padding(.top, 10)
+                                        .padding(.bottom, 10)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                }
+                                
                                 HStack(alignment: .bottom){
                                     Spacer()
-                                    Text("\(stepCount) 步／8000步").font(.system(size: 15))
+                                    Text("\(stepCount) ").font(.system(size: 20))
                                         .foregroundColor(.black)
-                                        
+                                    Text("步／8000步").font(.system(size: 12))
+
                                 
                                 }
                             }
@@ -235,7 +245,7 @@ struct Home: View {
                 print("Found first object: \(firstObject)")
                 if let drinkItems = firstObject.relationship_drinkitem?.allObjects as? [CDdrink_item] {
                     for drinkItem in drinkItems {
-                        sum += Int(drinkItem.ml)
+                        sum += Int(Float(drinkItem.ml)*drinks[Int(drinkItem.drink_num)].proportion)
                     }
                 }
                 result = sum

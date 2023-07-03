@@ -16,143 +16,259 @@ struct Record_Water: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 35){
-                    /*Rectangle()
-                     .foregroundColor(Color.white).opacity(0.8)
-                     .cornerRadius(20)
-                     .frame(height:400)*/
-                    VStack{
-                        VStack{
-                            let days: [String] =
-                            ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-                            HStack(spacing: 20){
-                                VStack(alignment: .leading,spacing: 10) {
-                                    Text(extraDate()[0]).font(.caption).fontWeight(.semibold)
-                                    Text(extraDate()[1]).font(.title)
-                                    
-                                }
-                                Spacer()
-                                Button() {
-                                    withAnimation{
-                                        currentMonth -= 1
-                                        print(getCurrentMonth())
-                                        print(currentDate)
-                                        print(extraDate())
-                                    }
-                                }label: {
-                                    Image(systemName: "chevron.left")
-                                }
-                                Button() {
-                                    withAnimation{
-                                        currentMonth += 1
-                                        print(getCurrentMonth())
-                                        print(extraDate())
-                                        
-                                    }
-                                    
-                                }label: {
-                                    Image(systemName: "chevron.right")
-                                }
-                            }
-                            
-                            HStack(spacing: 0){
-                                ForEach(days,id: \.self){day in
-                                    
-                                    Text(day)
-                                        .font(.callout)
-                                        .fontWeight(.semibold)
-                                        .frame(maxWidth: .infinity)
-                                    
-                                }
-                            }
-                            let columns = Array(repeating: GridItem(.flexible()), count: 7)
-                            
-                            LazyVGrid(columns: columns, spacing: 15){
-                                ForEach(extractDate()){value in
-                                    CardView(value: value)
-                                        .background(
-                                            Capsule().fill(Color.blue)
-                                                .padding(.horizontal,8)
-                                                .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
-                                        )
-                                        .onTapGesture {
-                                            currentDate = value.date
-                                        }
-                                }
-                            }
-                        }.padding().frame(maxWidth:.infinity,alignment:.leading)
-                            .background(
-                                Color.white
-                                    .cornerRadius(10)
-                            )
-                        
-                        
-                        VStack(spacing: 15){
-                            Text("Drinks").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
-                            
-                            if let drink = DrinkMetaData_test.first(where: { drink in
-                                return isSameDay(date1: getSampleDate(offset: Int(drink.float)), date2: currentDate)
-                            }){
-                                ForEach(drink.relationship_drinkitem?.allObjects as? [CDdrink_item] ?? [], id: \.self) { drinkItem in
-                                    HStack{
-                                        Image(drinks[Int(drinkItem.drink_num)].image)
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                        VStack(alignment: .leading,spacing:  10){
-                                            Text(String(drinks[Int(drinkItem.drink_num)].name))
-                                            
-                                            Text(String(Int(drinkItem.ml))).font(.title2.bold())
-                                        }
-                                    }
-                                    .padding(.vertical,10)
-                                    .padding(.horizontal)
-                                    .frame(maxWidth:.infinity,alignment:.leading)
-                                    .background(
-                                        Color.white
-                                            .cornerRadius(10)
-                                    )
-                                }
-                                    
-                            }
-                                
-                            if let drink = drinks_recrod.first(where: { drink in
-                                return isSameDay(date1: drink.drinkDate, date2: currentDate)
-                            }){
-                                ForEach(drink.drink){drink in
-                                    HStack{
-                                        Image(drinks[drink.num].image)
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                        VStack(alignment: .leading,spacing:  10){
-                                            Text(String(drinks[drink.num].name))
-                                            
-                                            Text(String(drink.ml*drinks[drink.num].proportion)).font(.title2.bold())
-                                        }
-                                    }
-                                    .padding(.vertical,10)
-                                    .padding(.horizontal)
-                                    .frame(maxWidth:.infinity,alignment:.leading)
-                                    .background(
-                                        Color.white
-                                            .cornerRadius(10)
-                                    )
-                                    
-                                }
-                            }else{
-                                Text("No drink Found")
-                            }
-                            ////
-                        }
-                        .padding(.top,20)
-                        Rectangle()
-                            .foregroundColor(Color.white).opacity(0)
-                            .cornerRadius(20)
-                            .frame(height:200)
-                        
-                        
+                /*Rectangle()
+                 .foregroundColor(Color.white).opacity(0.8)
+                 .cornerRadius(20)
+                 .frame(height:400)*/
+                VStack{
+                    HStack(spacing: 10) {
+                        Image(systemName: "drop.fill").font(.title)
+                        Text("喝水紀錄").font(.title)
                     }.padding()
                     
                     
+                    VStack{
+                        
+                        let days: [String] =
+                        ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+                        HStack(spacing: 20){
+                            VStack(alignment: .leading,spacing: 10) {
+                                Text(extraDate()[0]).font(.caption).fontWeight(.semibold)
+                                Text(extraDate()[1]).font(.title)
+                                
+                            }
+                            Spacer()
+                            Button() {
+                                withAnimation{
+                                    currentMonth -= 1
+                                    print(getCurrentMonth())
+                                    print(currentDate)
+                                    print(extraDate())
+                                }
+                            }label: {
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(Color.black)
+                            }
+                            Button() {
+                                withAnimation{
+                                    currentMonth += 1
+                                    print(getCurrentMonth())
+                                    print(extraDate())
+                                    
+                                }
+                                
+                            }label: {
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(Color.black)
+                            }
+                        }
+                        
+                        HStack(spacing: 0){
+                            ForEach(days,id: \.self){day in
+                                
+                                Text(day)
+                                    .font(.callout)
+                                    .fontWeight(.semibold)
+                                    .frame(maxWidth: .infinity)
+                                
+                            }
+                        }
+                        let columns = Array(repeating: GridItem(.flexible()), count: 7)
+                        
+                        LazyVGrid(columns: columns, spacing: 15){
+                            ForEach(extractDate()){value in
+                                CardView(value: value)
+                                    .background(
+                                        Capsule().fill(Color.blue)
+                                            .padding(.horizontal,8)
+                                            .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
+                                    )
+                                    .onTapGesture {
+                                        currentDate = value.date
+                                    }
+                            }
+                        }
+                    }.padding().frame(maxWidth:.infinity,alignment:.leading)
+                        .background(
+                            Color.white
+                                .cornerRadius(10)
+                                
+                        )
                     
+                        .padding(5)
+                    
+                    
+                    /*HStack{
+                        Color.white
+                            .frame(width: UIScreen.main.bounds.width/3.6, height: UIScreen.main.bounds.width/3.6)
+                            .aspectRatio(1, contentMode: .fit)
+                            .cornerRadius(10)
+                            .overlay(
+                                HStack{
+                                    Image(systemName: "drop.fill")
+                                        .font(.system(size: 20))
+                                        .padding(.leading, 10.0)
+
+                                    VStack {
+                                        HStack{
+                                            Text("總共")
+                                                    .font(.system(size: 12))
+                                                    .multilineTextAlignment(.leading)
+
+                                            Spacer()
+                                        }.padding(.bottom, 1.0)
+                                        
+                                        Text("1000 ml")
+                                            .font((.system(size: 18)))
+                                            .multilineTextAlignment(.trailing)
+                                        }
+                                    
+                                }
+                                
+                            );
+                        Color.white
+                            .frame(width: UIScreen.main.bounds.width/3.6, height: UIScreen.main.bounds.width/3.6)
+                            .aspectRatio(1, contentMode: .fit)
+                            .cornerRadius(10)
+                            .overlay(
+                                HStack{
+                                    Image(systemName: "calendar")
+                                        .font(.system(size: 20))
+                                        .padding(.leading, 10.0)
+
+                                    VStack {
+                                        HStack{
+                                            Text("最常")
+                                                    .font(.system(size: 12))
+                                                    .multilineTextAlignment(.leading)
+
+                                            Spacer()
+                                        }.padding(.bottom, 1.0)
+                                        
+                                        Text("水")
+                                            .font((.system(size: 18)))
+                                            .multilineTextAlignment(.trailing)
+                                    }
+                                    
+                                }
+                                
+                            );                        Color.white
+                            .frame(width: UIScreen.main.bounds.width/3.6, height: UIScreen.main.bounds.width/3.6)
+                            .aspectRatio(1, contentMode: .fit)
+                            .cornerRadius(10)
+                            .overlay(
+                                HStack{
+                                    Image(systemName: "target")
+                                        .font(.system(size: 20))
+                                        .padding(.leading, 10.0)
+
+                                    VStack {
+                                        HStack{
+                                            Text("連續")
+                                                    .font(.system(size: 15))
+                                                    .multilineTextAlignment(.leading)
+
+                                            Spacer()
+                                        }.padding(.bottom, 1.0)
+                                        
+                                        Text("1 天")
+                                            .font((.system(size: 18)))
+                                            .multilineTextAlignment(.trailing)
+                                        }
+                                    
+                                }
+                                
+                            );
+                        
+                    }*/
+                    
+                    
+                    VStack(spacing: 15){
+                        Text("Drinks").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
+                        
+                        if let drink = DrinkMetaData_test.first(where: { drink in
+                            return isSameDay(date1: getSampleDate(offset: Int(drink.float)), date2: currentDate)
+                        }){
+                            ForEach(drink.relationship_drinkitem?.allObjects as? [CDdrink_item] ?? [], id: \.self) { drinkItem in
+                                HStack{
+                                    Image(drinks[Int(drinkItem.drink_num)].image)
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                    VStack(alignment: .leading,spacing:  10){
+                                        HStack{
+                                            Text(String(drinks[Int(drinkItem.drink_num)].name))
+                                            Spacer()
+                                            Text("容量").font(.system(size: 12))
+                                            Text(String(Int(drinkItem.ml)))
+                                        }
+                                        HStack{
+                                            Text(String(Int(Float(drinkItem.ml)*drinks[Int(drinkItem.drink_num)].proportion))).font(.title2.bold())
+                                            Spacer()
+                                            Text("水佔比").font(.system(size: 12))
+                                            Text(String(drinks[Int(drinkItem.drink_num)].proportion))
+                                        }
+                                                                            }
+                                    Spacer()
+                                    /*Image(systemName: "xmark")
+                                        .font(.system(size: 10))
+                                        .foregroundColor(.white)
+                                        .padding(2)
+                                        .background(Color.red)
+                                        .cornerRadius(10)
+                                        .offset(x: 10, y: -30)*/
+                                }
+                                .padding(.vertical,10)
+                                .padding(.horizontal)
+                                .frame(maxWidth:.infinity,alignment:.leading)
+                                .background(
+                                    Color.white
+                                        .cornerRadius(10)
+                                )
+                            }
+                            
+                        }
+                        
+                        if let drink = drinks_recrod.first(where: { drink in
+                            return isSameDay(date1: drink.drinkDate, date2: currentDate)
+                        }){
+                            ForEach(drink.drink){drink in
+                                HStack{
+                                    Image(drinks[drink.num].image)
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                    VStack(alignment: .leading,spacing:  10){
+                                        Text(String(drinks[drink.num].name))
+                                        
+                                        Text(String(drink.ml*drinks[drink.num].proportion)).font(.title2.bold())
+                                    }
+                                    
+                                }
+                                .padding(.vertical,10)
+                                .padding(.horizontal)
+                                .frame(maxWidth:.infinity,alignment:.leading)
+                                
+                                .background(
+                                    Color.white
+                                        .cornerRadius(10)
+                                )
+                                
+                            }
+                        }else{
+                            Text("No drink Found")
+                        }
+                        ////
+                    }
+                    .padding(.top,20)
+                    Rectangle()
+                        .foregroundColor(Color.white).opacity(0)
+                        .cornerRadius(20)
+                        .frame(height:200)
+                    
+                    
+                }.padding()
+                
+                
+                
                 
                 
                 
@@ -160,7 +276,6 @@ struct Record_Water: View {
             }
             
         }
-        
         
         
     }

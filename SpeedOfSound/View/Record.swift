@@ -25,7 +25,8 @@ struct Record: View {
     }
     
     @State private var selectedViewType = ViewType.view1
-    
+    @State var startAnimeation: CGFloat = 0
+
     var body: some View {
         ZStack{
             VStack {
@@ -33,13 +34,13 @@ struct Record: View {
                     .opacity(0)
                     .frame(width: 100, height: 50)
                     .cornerRadius(10)
-                Picker(selection: $selectedViewType, label: Text("Select a view")) {
+                /*Picker(selection: $selectedViewType, label: Text("Select a view")) {
                     ForEach(ViewType.allCases) { viewType in
                         Text(viewType.rawValue.capitalized).tag(viewType)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding()
+                .padding()*/
                 
                 selectedViewType.view
             }
@@ -48,11 +49,11 @@ struct Record: View {
         .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(
             ZStack{
                 Color("BG")
-                WaterWave(progress: 0.2, waveHelight: 0.05 , offset: 0)
+                WaterWave(progress: 0.2, waveHelight: 0.05 , offset: startAnimeation)
                     .fill(Color.yellow)
                 
-            }
-        ).ignoresSafeArea()
+            }        )
+        .ignoresSafeArea()
         
     }
 }

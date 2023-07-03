@@ -89,34 +89,33 @@ struct iAquaPulseWidgetEntryView : View {
                         
                         VStack(alignment: .leading) {
                             Text("补水量: \(result)ml")
-                                .containerBackground(for: . widget) {
+                            /*.containerBackground(for: . widget) {
                                 Color.white
-                                }
+                                }*/
                             
                             
                             
                             switch entry.configuration.enumparameter {
                             case .unknown:
                                 Text("步数: \(stepCount)")
-                                    .containerBackground(for: . widget) {
+                                    /*.containerBackground(for: . widget) {
                                     Color.white
-                                    }
+                                    }*/
                             case .first:
                                 Text("first enum")
-                                    .containerBackground(for: . widget) {
+                                    /*.containerBackground(for: . widget) {
                                     Color.white
-                                    }
+                                    }*/
                             case .second:
                                 Text("second enum")
-                                    .containerBackground(for: . widget) {
-                                    Color.white
-                                    }
+                                /*.containerBackground(for: . widget) {
+                                Color.white
+                                }*/
                             default:
                                 Text("default enum")
-                                    .containerBackground(for: . widget) {
-                                    Color.white
-                                    }
-                                
+                                /*.containerBackground(for: . widget) {
+                                Color.white
+                                }*/
                             }
                         }
                     }
@@ -132,9 +131,9 @@ struct iAquaPulseWidgetEntryView : View {
                     .font(.system(size: 25))
                     .tracking(1.5)
                     .lineLimit(1)
-                    .containerBackground(for: . widget) {
-                    Color.white
-                    }
+                /*.containerBackground(for: . widget) {
+                Color.white
+                }*/
                 
 
                 Text("\(targetWaterAmount)mL")
@@ -145,10 +144,9 @@ struct iAquaPulseWidgetEntryView : View {
                     .tracking(1.5)
                     .lineLimit(1)
                     .padding(.top, -15)
-                    .containerBackground(for: . widget) {
-                    Color.white
-                    }
-                
+                /*.containerBackground(for: . widget) {
+                Color.white
+                }*/
                 
                 switch entry.configuration.enumparameter {
                 case .unknown:
@@ -159,9 +157,9 @@ struct iAquaPulseWidgetEntryView : View {
                         .font(.system(size: 25))
                         .tracking(1.5)
                         .lineLimit(1)
-                        .containerBackground(for: . widget) {
-                        Color.white
-                        }
+                    /*.containerBackground(for: . widget) {
+                    Color.white
+                    }*/
                         
                     
                     Text("\(stepCount)步")
@@ -172,25 +170,24 @@ struct iAquaPulseWidgetEntryView : View {
                         .tracking(1.5)
                         .lineLimit(1)
                         .padding(.top, -15)
-                        .containerBackground(for: . widget) {
-                        Color.white
-                        }
-                    
+                    /*.containerBackground(for: . widget) {
+                    Color.white
+                    }*/
                 case .first:
                     Text("步數: \(stepCount)")
-                        .containerBackground(for: . widget) {
+                        /*.containerBackground(for: .widget) {
                         Color.white
-                        }
+                        }*/
                 case .second:
                     Text("步數: \(stepCount)")
-                        .containerBackground(for: . widget) {
+                        /*.containerBackground(for: . widget) {
                         Color.white
-                        }
+                        }*/
                 default:
                     Text("步數: \(stepCount)")
-                        .containerBackground(for: . widget) {
+                        /*.containerBackground(for: . widget) {
                         Color.white
-                        }
+                        }*/
 
                 }
             }

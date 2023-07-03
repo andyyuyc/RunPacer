@@ -45,7 +45,7 @@ struct ContentView: View {
             .toolbarBackground(Color("BG"), for: .tabBar)
             .tag(3)
             
-            NavigationView {
+            /*NavigationView {
                 testCoredata()
             }
             .tabItem {
@@ -53,12 +53,11 @@ struct ContentView: View {
                 Text("Test")
             }
             .toolbarBackground(Color("BG"), for: .tabBar)
-            .tag(4)
+            .tag(4)*/
             
         }
-        .accentColor(.white)
+        .accentColor(.black)
         .onAppear { // 設定初始的背景色
-            UITabBar.appearance().unselectedItemTintColor = .black //
             scheduleLocalNotification()
         }
     }

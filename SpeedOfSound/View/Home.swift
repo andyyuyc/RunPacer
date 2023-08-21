@@ -1,271 +1,293 @@
 //
-//  home.swift
-//  water
+//  Home.swift
+//  Figma
 //
-//  Created by 許桓菘 on 2023/4/8.
+//  Created by Andy Yu on 2023/8/7.
 //
 
-import Foundation
 import SwiftUI
-import HealthKit
-import CoreData
 
 struct Home: View {
-    @Environment(\.managedObjectContext) var moc
-    @State var progress: CGFloat = 0.2
-    @State var startAnimeation: CGFloat = 0
-    @State var change: Int = 0
-    @State private var showWater = false
-    @State var selectedButton: Int = 0 // 初始值為nil
-    @State private var stepCount: Int = 0
-    @State private var result = 0
-    private let healthStore = HKHealthStore()
-    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-    
-    
-
-    
+    @State private var showPage = false
     var body: some View {
-        ZStack{
-            WaterWave(progress: progress, waveHelight: 0.025 , offset: startAnimeation)
-                .fill(Color.blue)
-                
-                
-            VStack{
-                GeometryReader{ proxy in
-                    VStack(alignment: .center){
-                        Color.white
-                            .opacity(0)
-                            .frame(width: 50, height:proxy.size.height*0.1)
-                            .cornerRadius(10)
-                        
-                        Text("今天")
-                            .font(.largeTitle)
-                            .font(.footnote)
-                            
-                        HStack{
-                            VStack{
-                                HStack{
-                                    Image(systemName: "drop.fill").font(.system(size: 20))
-                                    Text("目標補水量:")
-                                        .font(.system(size: 20))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.black)
-                                        .padding(.top, 10)
-                                        .padding(.bottom, 10)
-                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                }
-                                
-                                HStack(alignment: .bottom){
-                                    Spacer()
-                                    Text("\(result)").font(.system(size: 20))
-                                    Text("ml／2000 ml").font(.system(size: 12))
+        NavigationView {
+            ZStack() {
+                Image("Rectangle 223")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                Image("Background")
+                    .resizable()
+                    .frame(width: 415, height: 101.45978)
+                    .offset(x: 0, y: 390)
+                    .edgesIgnoringSafeArea(.all)
+                ZStack() {
                     
-                                                                    }
-                            }
-                            Divider()
-                                .padding(.leading)
-                                .padding(.trailing)
-                                .frame(height: 100.0)
-                            
-                            VStack{
-                                HStack{
-                                    Image(systemName: "figure.run").font(.system(size: 20))
-                                    Text("目標步数")
-                                        .font(.system(size: 20))
-                                        .foregroundColor(.black)
-                                        .fontWeight(.bold)
-                                        .padding(.top, 10)
-                                        .padding(.bottom, 10)
-                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    Group {
+                        ZStack() {
+                            ZStack() { }
+                                .frame(width: 414, height: 112.55)
+                                .offset(x: 0, y: 0)
+                            ZStack() {
+                                ZStack() {
+                                    Image("icon")
+                                        .frame(width: 19.87, height: 19.86)
+                                        .offset(x: 0, y: 0)
                                 }
-                                
-                                HStack(alignment: .bottom){
-                                    Spacer()
-                                    Text("\(stepCount) ").font(.system(size: 20))
-                                        .foregroundColor(.black)
-                                    Text("步／8000步").font(.system(size: 12))
-
-                                
-                                }
+                                .frame(width: 17.66, height: 19.81)
+                                .offset(x: -0.06, y: -10.32)
+                                Text("个人主页")
+                                    .font(Font.custom("Roboto", size: 10))
+                                    .foregroundColor(Color(red: 0.41, green: 0.38, blue: 0.45))
+                                    .offset(x: 0, y: 13.72)
                             }
-                        }.padding()
-                        
-                        
-                        Spacer()
-                        ZStack{
+                            .frame(width: 40, height: 40.45)
+                            .offset(x: 164, y: -2.95)
                             
-                            Rectangle()
-                                .foregroundColor(Color.white).opacity(0.8)
-                                .frame(width: proxy.size.width, height: 120)
-                                .cornerRadius(20)
-                                
                             
-                            ScrollView(.horizontal) {
-                                
-                                HStack(spacing:10) {
-                                    ForEach(Array(drinks.enumerated()), id: \.offset) { index, drink in
-                                        Button(action: {
-                                            self.showWater = true
-                                            selectedButton = index
-                                        }) {
-                                            VStack{
-                                                Image(drink.image)// 圖片的名稱
-                                                    .resizable()
-                                                    .frame(width: 50, height: 50)// 設置圖片大小
-                                                Text(drink.name)
-                                                    .foregroundColor(Color.black)
-                                            }
-                                            
-                                        }
-                                        .padding() // 加上一些間距
-                                    }
-                                    
+                            ZStack {
+                                ZStack() {
+                                    ZStack() { }
+                                    Image("Group 7")
+                                        .frame(width: 19.87, height: 19.86)
+                                        .offset(x: 0, y: 0)
                                 }
+                                .frame(width: 19.87, height: 19.86)
+                                .offset(x: -0.12, y: -9.74)
+                                Text("消息")
+                                    .font(Font.custom("Roboto", size: 10))
+                                    .foregroundColor(Color(red: 0.41, green: 0.38, blue: 0.45))
+                                    .offset(x: 0.05, y: 13.17)
                             }
+                            .frame(width: 20.11, height: 39.34)
+                            .offset(x: 82.05, y: -2.05)
+                            
+                            ZStack() {
+                                ZStack() {
+                                    ZStack() { }
+                                    Image("Group 6")
+                                        .frame(width: 19.87, height: 19.86)
+                                        .offset(x: 0, y: 0)
+                                }
+                                .frame(width: 19.88, height: 19.87)
+                                .offset(x: -0.23, y: -9.74)
+                                
+                                Text("训练计划")
+                                    .font(Font.custom("Roboto", size: 10))
+                                    .foregroundColor(Color(red: 0.41, green: 0.38, blue: 0.45))
+                                    .offset(x: 0, y: 13.17)
+                            }
+                            .frame(width: 41, height: 39.35)
+                            .offset(x: -79.50, y: -2.05)
+                            
+                            ZStack() {
+                                Image("Path 1508_highlight")
+                                    .frame(width: 19.87, height: 19.86)
+                                    .offset(x: 0, y: -8)
+                                
+                                Text("首页")
+                                    .font(Font.custom("Roboto", size: 10))
+                                    .foregroundColor(Color(red: 0.55, green: 0.36, blue: 1))
+                                    .offset(x: 0, y: 13.72)
+                            }
+                            .frame(width: 21, height: 40.45)
+                            .offset(x: -164.50, y: -2.95)
+                            ZStack() { }
+                            Image("posst")
+                                .frame(width: 66.24, height: 66.21)
+                                .offset(x: 0.55, y: -15.45)
                         }
+                        .frame(width: 414, height: 112.55)
+                        .offset(x: -0, y: 391.28)
+                        ZStack() {
+                            ZStack() {
+                                ZStack() {
+                                    ZStack() { }
+                                        .frame(width: 24.29, height: 12.51)
+                                        .offset(x: -1.29, y: 0)
+                                        .opacity(0.35)
+                                }
+                                .frame(width: 26.86, height: 12.51)
+                                .offset(x: 166.46, y: -2.21)
+                                Text("9:41")
+                                    .font(Font.custom("Segoe UI", size: 15))
+                                    .foregroundColor(.white)
+                                    .offset(x: -164.43, y: 0)
+                            }
+                            .frame(width: 359.78, height: 22.07)
+                            .offset(x: 11.66, y: 2.21)
+                        }
+                        .frame(width: 414, height: 48.55)
+                        .offset(x: -0, y: -423.72)
+                        ZStack() { }
+                        Image("Vector")
+                            .frame(width: 414, height: 413.79)
+                            .offset(x: 0, y: -173.79)
+                            .opacity(0.75)
+                        ZStack() {
+                            ZStack() { }
+                            
+                                .frame(width: 17.66, height: 17.66)
+                                .offset(x: -0, y: 74.48)
+                        }
+                        Image("Group 16")
+                            .frame(width: 181.06, height: 193.10)
+                            .offset(x: 0.55, y: -244.41)
                         
+                        
+                        //5KM
+                        ZStack() {
+                            ZStack() { }
+                            
+                            Image("Rectangle 227")
+                                .frame(width: 41.95, height: 44.85)
+                            
+                            Image("Ellipse 118")
+                                .frame(width: 37.536, height: 37.51724)
+                                .background(
+                                    Image("Union 3")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                )
+                                .offset(x:60, y: 0.25)
+                            
+                            Text("5km跑")
+                                .font(Font.custom("Roboto", size: 14))
+                                .foregroundColor(.white)
+                                .offset(x: -5.58, y: -8.25)
+                            
+                            Text("距离您500米")
+                                .font(Font.custom("Roboto", size: 10))
+                                .foregroundColor(.white)
+                                .offset(x: -5.08, y: 8.25)
+                        }
+                        .frame(width: 153.46, height: 44.85)
+                        .offset(x: -89.43, y: -256.75)
+                        
+                        
+                        //10KM
+                        ZStack() {
+                            ZStack() { }
+                            Image("Rectangle 227")
+                                .frame(width: 41.95, height: 44.85)
+                            
+                            Image("Ellipse 120")
+                                .frame(width: 37.536, height: 37.51724)
+                                .background(
+                                    Image("Union 3")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                )
+                                .offset(x:60, y: 0.25)
+                            
+                            Text("10km跑")
+                                .font(Font.custom("Roboto", size: 14))
+                                .foregroundColor(.white)
+                                .offset(x: -5.58, y: -8.25)
+                            
+                            Text("距离您1500米")
+                                .font(Font.custom("Roboto", size: 10))
+                                .foregroundColor(.white)
+                                .offset(x: -5.58, y: 8.25)
+                        }
+                        .frame(width: 153.46, height: 44.85)
+                        .offset(x: 107.09, y: -202.68)
+                        
+                        
+                        //全马
+                        ZStack() {
+                            ZStack() { }
+                            Image("Rectangle 227")
+                                .frame(width: 41.95, height: 44.85)
+                            
+                            Image("Ellipse 119")
+                                .frame(width: 37.536, height: 37.51724)
+                                .background(
+                                    Image("Union 3")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                )
+                                .offset(x: 60, y: 0.25)
+                            
+                            Text("全马")
+                                .font(Font.custom("Roboto", size: 14))
+                                .foregroundColor(.white)
+                                .offset(x: -10.06, y:  -8.25)
+                            
+                            Text("距离您1000米")
+                                .font(Font.custom("Roboto", size: 10))
+                                .foregroundColor(.white)
+                                .offset(x: -10.06, y:  8.25)
+                        }
+                        .frame(width: 153.46, height: 44.85)
+                        .offset(x: -94.95, y: -33.85)
+                        
+                        //半马
+                        ZStack() {
+                            ZStack() { }
+                            Image("Rectangle 227")
+                                .frame(width: 41.95, height: 44.85)
+                                .offset(x: 85.06, y: -20.24)
+                            
+                            
+                            Image("Ellipse 121")
+                                .frame(width: 37.536, height: 37.51724)
+                                .background(
+                                    Image("Union 3")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                )
+                                .offset(x: 145.06, y: -20.24)
+                            
+                            Text("距离您700米")
+                                .font(Font.custom("Roboto", size: 10))
+                                .foregroundColor(.white)
+                                .offset(x: 83, y: -12.25)
+                            
+                            Text("半马")
+                                .font(Font.custom("Roboto", size: 14))
+                                .foregroundColor(.white)
+                                .offset(x: 83, y: -28)
+                            
+                        }
+                        .frame(width: 153.46, height: 44.85)
+                        .offset(x: 15.44, y: -59.26)
+                    }
+                }
+                .frame(width: 414, height: 896)
+                .offset(x: 0, y: 0)
+                
+                Button(action: {
+                    print("1")
+                    showPage.toggle()
+                }) {
+                    ZStack() {
+                        Image("Rectangle 3")
+                            .frame(width: 150, height: 56)
+                        
+                        
+                        Text("快速配对")
+                            .font(Font.custom("Roboto", size: 20))
+                            .foregroundColor(Color(red: 0.55, green: 0.36, blue: 1))
                         
                     }
-                }.padding()
-                
-                
-                Spacer()
-                
-                Color.white
-                    .opacity(0)
-                    .frame(width: 100, height: 90)
-                    .cornerRadius(10)
-            }
-            
-            .onAppear {
-                getTodaysSteps()
-                
-                result = checkCondition()
-                if result == 0 {
-                    progress = 0.2
-                } else {
-                    progress = 0.2 + CGFloat(result)/2000*0.8
-                }
-                        
-                print(progress)
-            }
-            .sheet(isPresented: $showWater, onDismiss: {
-                // 在 sheet 關閉時執行的動作
-                print("Sheet Dismissed")
-                result = checkCondition()
-                // 可以在這裡更新頁面上的其他狀態或執行其他需要的操作
-            }) {
-                Water(selectedNumber: selectedButton)
-                
-            }
-            
-            
-            
-        }.onReceive(timer) { _ in
-            if progress <  0.2 + CGFloat(result)/2000.0*0.8 {
-                progress = progress+0.003
-                print(progress)
-            }
-        }
-        .onAppear{
-            withAnimation(.linear(duration: 15)
-                .repeatForever(autoreverses:false)){
-                    startAnimeation = UIScreen.main.bounds.width*10}
-        }.ignoresSafeArea()
-            .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background()
-        
-        
-        
-        
-    }
-    private func authorizeHealthKit() {
-        let typesToShare = Set([
-            HKObjectType.workoutType()
-        ])
-        let typesToRead = Set([
-            HKObjectType.quantityType(forIdentifier: .stepCount)!
-        ])
-        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-            if !success {
-                print("Error: \(String(describing: error))")
-            }
-        }
-    }
-    
-    private func getTodaysSteps() {
-        
-        
-        
-        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
-        sharedDefaults?.set(stepCount, forKey: "StepCountKey")
-        sharedDefaults?.set(result, forKey: "ResultKey")
-        sharedDefaults?.synchronize()
-        
-        
-        
-        let type = HKObjectType.quantityType(forIdentifier: .stepCount)!
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
-        let startDate = calendar.date(from: components)!
-        let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
-        
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-        let query = HKStatisticsQuery(quantityType: type, quantitySamplePredicate: predicate,
-                                      options: [.cumulativeSum]) { (query, statistics, error) in
-            guard let statistics = statistics else {
-                print("Error getting statistics: (String(describing: error))")
-                return
-            }
-            DispatchQueue.main.async {
-                if let sum = statistics.sumQuantity() {
-                    self.stepCount = Int(sum.doubleValue(for: HKUnit.count()))
-                }
-            }
-        }
-        healthStore.execute(query)
-    }
-    func checkCondition() -> Int {
-        let sharedDefaults = UserDefaults(suiteName: "group.com.andyyuyc.iAquaPulse")
-        sharedDefaults?.set(result, forKey: "ResultKey")
-        sharedDefaults?.synchronize()
-        
-        // 在此處添加您的條件檢查邏輯
-        let predicate = NSPredicate(format: "float == 0")
-        let fetchRequest: NSFetchRequest<CDDrinkMetaData> = CDDrinkMetaData.fetchRequest()
-        fetchRequest.predicate = predicate
-        fetchRequest.fetchLimit = 1
-
-        do {
-            let results = try moc.fetch(fetchRequest)
-            var sum = 0
-            if let firstObject = results.first {
-                // 在此處使用符合條件的第一個物件
-                print("Found first object: \(firstObject)")
-                if let drinkItems = firstObject.relationship_drinkitem?.allObjects as? [CDdrink_item] {
-                    for drinkItem in drinkItems {
-                        sum += Int(Float(drinkItem.ml)*drinks[Int(drinkItem.drink_num)].proportion)
+                }.offset(x: 2, y: 194)
+                    .fullScreenCover(isPresented:$showPage){
+                        Match()
                     }
-                }
-                result = sum
-                return sum
-            } else {
-                print("No objects found.")
-                return 0
-            }
-        } catch {
-            print("Failed to fetch objects: \(error)")
+            }.offset(y:23)
+            
         }
-        return 0
     }
 }
-
-
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
+        
         Home()
     }
 }
-

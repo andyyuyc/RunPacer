@@ -48,9 +48,9 @@ struct Record: View {
         }
         .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top).background(
             ZStack{
-                Color("BG")
+                /*Color("BG")
                 WaterWave(progress: 0.2, waveHelight: 0.05 , offset: startAnimeation)
-                    .fill(Color.yellow)
+                    .fill(Color.yellow)*/
                 
             }        )
         .ignoresSafeArea()

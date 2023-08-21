@@ -69,9 +69,7 @@ struct Sport: View {
                     .frame(width: 100, height: 90)
                     .cornerRadius(10)
             }.padding()
-                .sheet(isPresented: $showWater) {
-                    SportWater()
-                }
+                
                 
         }
         .onAppear{

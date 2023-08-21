@@ -11,55 +11,42 @@ struct ContentView: View {
         TabView(selection: $selection) {
             Home()
                 .tabItem {
-                    Image(systemName: "drop.degreesign")
-                    Text("喝水")
+                    
                 }
-                .toolbarBackground(Color.blue, for: .tabBar)
                 .tag(0)
             
-            Record()
+            Training_Select()
                 .tabItem {
-                    Image(systemName: "clock.fill")
-                    Text("紀錄")
+                    
                 }
-                .toolbarBackground(Color.yellow, for: .tabBar)
+                
                 .tag(1)
-            
             NavigationView {
                 ContentView_1()
             }
             .tabItem {
-                Image(systemName: "figure.run")
-                Text("運動")
+                
             }
             .toolbarBackground(Color("SportColor"), for: .tabBar)
             .tag(2)
             
             NavigationView {
-                Setting()
+                ContentView_1()
             }
             .tabItem {
-                Image(systemName: "gearshape")
-                Text("設定")
+                
             }
-            .toolbarBackground(Color("BG"), for: .tabBar)
+            .toolbarBackground(Color("SportColor"), for: .tabBar)
             .tag(3)
             
-            /*NavigationView {
-                testCoredata()
-            }
+            Personal_Page()
             .tabItem {
-                Image(systemName: "gearshape")
-                Text("Test")
+                
             }
             .toolbarBackground(Color("BG"), for: .tabBar)
-            .tag(4)*/
-            
+            .tag(4)
         }
-        .accentColor(.black)
-        .onAppear { // 設定初始的背景色
-            scheduleLocalNotification()
-        }
+    
     }
 }
 

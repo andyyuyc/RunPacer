@@ -6,8 +6,8 @@ struct SpeedOfSoundApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Home()
-            //ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
+            //Home()
+            ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

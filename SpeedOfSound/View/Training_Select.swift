@@ -10,7 +10,7 @@ import SwiftUI
 struct Training_Select: View {
     
     @State private var rangeIndex = 2
-    
+    @State private var showPage = false
     var range = ["0 km - 5 km", "5 km - 10 km", "10 km - 半马", "半马 - 全马", "全马"]
     
     var body: some View {
@@ -51,16 +51,18 @@ struct Training_Select: View {
 
                     
                     Button("确认"){
-                        
+                        showPage.toggle()
                     }
+                    
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    
                     .padding()
                     .padding(.horizontal, 20)
                     .background(Color(red: 0.55, green: 0.36, blue: 1)
-                        .cornerRadius(50))
+                        .cornerRadius(50)).fullScreenCover(isPresented:$showPage){
+                            //Record_Water()
+                        }
                 }
                 
                 

@@ -61,7 +61,6 @@ var drinks_recrod: [DrinkMetaData] = [
     DrinkMetaData (drink: [
         Drink_recrod(num: 0, ml: 100),
         Drink_recrod(num: 2, ml: 200),
-        Drink_recrod(num: 3, ml: 300)
     ], drinkDate: getSampleDate(offset: -1)),
     DrinkMetaData (drink: [
         Drink_recrod(num: 0, ml: 100),

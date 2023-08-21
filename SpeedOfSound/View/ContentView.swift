@@ -15,7 +15,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Training_Select()
+            Record()
                 .tabItem {
                     
                 }

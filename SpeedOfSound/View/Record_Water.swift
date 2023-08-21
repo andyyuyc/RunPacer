@@ -23,7 +23,7 @@ struct Record_Water: View {
                 VStack{
                     HStack(spacing: 10) {
                         Image(systemName: "drop.fill").font(.title)
-                        Text("喝水紀錄").font(.title)
+                        Text("運動計畫").font(.title)
                     }.padding()
                     
                     

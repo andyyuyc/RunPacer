@@ -109,10 +109,6 @@ struct Home: View {
                                 }
                                 .frame(width: 26.86, height: 12.51)
                                 .offset(x: 166.46, y: -2.21)
-                                Text("9:41")
-                                    .font(Font.custom("Segoe UI", size: 15))
-                                    .foregroundColor(.white)
-                                    .offset(x: -164.43, y: 0)
                             }
                             .frame(width: 359.78, height: 22.07)
                             .offset(x: 11.66, y: 2.21)

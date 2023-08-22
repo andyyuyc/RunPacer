@@ -196,7 +196,7 @@ struct Record: View {
                 .frame(width: 414, height: 112.55)
                 .offset(x: 0, y: 581.28)
             
-            }     
+            }.offset(y:5)
         )
         .ignoresSafeArea()
         

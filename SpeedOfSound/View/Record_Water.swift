@@ -184,7 +184,7 @@ struct Record_Water: View {
                     
                     
                     VStack(spacing: 15){
-                        Text("Drinks").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
+                        Text("   Training Plan").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
                         
                         if let drink = DrinkMetaData_test.first(where: { drink in
                             return isSameDay(date1: getSampleDate(offset: Int(drink.float)), date2: currentDate)

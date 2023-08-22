@@ -19,7 +19,6 @@ struct ContentView: View {
                 .tabItem {
                     
                 }
-                
                 .tag(1)
             NavigationView {
                 ContentView_1()
@@ -27,23 +26,20 @@ struct ContentView: View {
             .tabItem {
                 
             }
-            .toolbarBackground(Color("SportColor"), for: .tabBar)
             .tag(2)
             
             NavigationView {
-                ContentView_1()
+                MainMessagesView()
             }
             .tabItem {
                 
             }
-            .toolbarBackground(Color("SportColor"), for: .tabBar)
             .tag(3)
             
             Personal_Page()
             .tabItem {
                 
             }
-            .toolbarBackground(Color("BG"), for: .tabBar)
             .tag(4)
         }
     

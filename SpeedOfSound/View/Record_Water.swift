@@ -259,10 +259,7 @@ struct Record_Water: View {
                         ////
                     }
                     .padding(.top,20)
-                    Rectangle()
-                        .foregroundColor(Color.white).opacity(0)
-                        .cornerRadius(20)
-                        .frame(height:200)
+                    
                     
                     
                 }.padding()

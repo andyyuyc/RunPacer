@@ -115,7 +115,7 @@ struct MainMessagesView: View {
                     messagesView
                     
                     NavigationLink("", isActive: $shouldNavigateToChatLogView) {
-                        ChatLogView(vm: chatLogViewModel)
+                        ChatLogView(vm: chatLogViewModel)//.navigationBarHidden(true)
                     }
                     
                 }

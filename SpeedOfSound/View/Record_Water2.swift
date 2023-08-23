@@ -146,7 +146,7 @@ struct Record_Water2: View {
                                         VStack(alignment: .leading,spacing:  10){
                                             Text(String(drinks[drink.num].name))
                                             
-                                            Text(String(drink.ml*drinks[drink.num].proportion)).font(.title2.bold())
+                                            Text(String(drinks[drink.num].proportion)).font(.title2.bold())
                                         }
                                     }
                                     .padding(.vertical,10)

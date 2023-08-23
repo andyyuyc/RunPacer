@@ -10,6 +10,7 @@ import SwiftUI
 struct Record_Water: View {
     @State var currentDate: Date = Date()
     @State var currentMonth: Int = 0
+    @State private var showPage = false
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var drink_test: FetchedResults<CDdrink_item>
     @FetchRequest(sortDescriptors: []) var DrinkMetaData_test: FetchedResults<CDDrinkMetaData>
@@ -22,8 +23,27 @@ struct Record_Water: View {
                  .frame(height:400)*/
                 VStack{
                     HStack(spacing: 10) {
-                        Image(systemName: "drop.fill").font(.title)
-                        Text("運動計畫").font(.title)
+                        Image(systemName: "figure.run").font(.title)
+                        Text("训练计画").font(.title)
+                        Spacer()
+                        Button(action: {
+                            showPage.toggle()
+                            // 執行按鈕點擊時的操作
+                        }) {
+                            HStack{
+                                Image(systemName: "person.badge.plus")
+                                    .padding(.trailing, -5)
+                                Text("  制定计画")
+                            }.foregroundColor(Color(red: 0.33, green: 0.30, blue: 0.37))
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 5)
+                                .background(Color("gray"))
+                                .cornerRadius(50)
+                            
+                        }.padding(.trailing, -7)
+                            .fullScreenCover(isPresented:$showPage){
+                                Training_Select()
+                            }
                     }.padding()
                     
                     
@@ -79,7 +99,7 @@ struct Record_Water: View {
                             ForEach(extractDate()){value in
                                 CardView(value: value)
                                     .background(
-                                        Capsule().fill(Color.blue)
+                                        Capsule().fill(Color("pink"))
                                             .padding(.horizontal,8)
                                             .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
                                     )
@@ -89,15 +109,7 @@ struct Record_Water: View {
                             }
                         }
                     }.padding().frame(maxWidth:.infinity,alignment:.leading)
-                        .background(
-                            Color.white
-                                .cornerRadius(10)
-                                
-                        )
-                    
-                        .padding(5)
-                    
-                    
+
                     /*HStack{
                         Color.white
                             .frame(width: UIScreen.main.bounds.width/3.6, height: UIScreen.main.bounds.width/3.6)
@@ -183,8 +195,8 @@ struct Record_Water: View {
                     }*/
                     
                     
-                    VStack(spacing: 15){
-                        Text("   Training Plan").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
+                VStack(spacing: 15){
+                        Text("   今日计画").font(.title2.bold()).frame(maxWidth: .infinity,alignment:.leading)
                         
                         if let drink = DrinkMetaData_test.first(where: { drink in
                             return isSameDay(date1: getSampleDate(offset: Int(drink.float)), date2: currentDate)
@@ -233,28 +245,28 @@ struct Record_Water: View {
                         }){
                             ForEach(drink.drink){drink in
                                 HStack{
-                                    Image(drinks[drink.num].image)
+                                    /*Color.white.mask(Image(drinks[drink.num].image)
                                         .resizable()
-                                        .frame(width: 50, height: 50)
-                                    VStack(alignment: .leading,spacing:  10){
-                                        Text(String(drinks[drink.num].name))
+                                       ) .frame(width: 50, height: 50)*/
+                                    
                                         
-                                        Text(String(drink.ml*drinks[drink.num].proportion)).font(.title2.bold())
+                                    VStack(alignment: .leading,spacing:  10){
+                                        Text(String(drinks[drink.num].name)).foregroundColor(.white)
+                                        
+                                        Text(String(drink.ml)).foregroundColor(.white)
                                     }
                                     
                                 }
-                                .padding(.vertical,10)
-                                .padding(.horizontal)
                                 .frame(maxWidth:.infinity,alignment:.leading)
+                                .padding(20)
                                 
                                 .background(
-                                    Color.white
-                                        .cornerRadius(10)
+                                    Color("pink")
                                 )
-                                
+                                .cornerRadius(20)
                             }
                         }else{
-                            Text("No drink Found")
+                            Text("休息／交叉训练")
                         }
                         ////
                     }
@@ -307,7 +319,7 @@ struct Record_Water: View {
                         .frame(maxWidth: .infinity)
                     Spacer()
                     Circle()
-                        .foregroundColor(isSameDay(date1: drink.drinkDate, date2: currentDate) ? .white : Color.blue)
+                        .foregroundColor(isSameDay(date1: drink.drinkDate, date2: currentDate) ? .white : Color("pink"))
                         .frame(width: 8,height: 8)
                 }
                 else{

@@ -48,7 +48,7 @@ var tasks: [TaskMetaData] = [
 struct Drink_recrod: Identifiable {
     var id = UUID() .uuidString
     var num: Int
-    var ml: Float
+    var ml: String
 }
 struct DrinkMetaData: Identifiable{
     var id = UUID() .uuidString
@@ -57,32 +57,45 @@ struct DrinkMetaData: Identifiable{
 }
 var drinks_recrod: [DrinkMetaData] = [
     DrinkMetaData (drink: [
+        Drink_recrod(num: 0, ml: "缓慢而稳定地跑，时间30分钟。")
     ], drinkDate: getSampleDate(offset: 0)),
     DrinkMetaData (drink: [
-        Drink_recrod(num: 0, ml: 100),
-        Drink_recrod(num: 2, ml: 200),
-    ], drinkDate: getSampleDate(offset: -1)),
+        Drink_recrod(num: 0, ml: "缓慢而稳定地跑，时间30分钟。"),
+    ], drinkDate: getSampleDate(offset: 9)),
     DrinkMetaData (drink: [
-        Drink_recrod(num: 0, ml: 100),
-    ], drinkDate: getSampleDate(offset: -3)),
+        Drink_recrod(num: 0, ml: "缓慢而稳定地跑，时间30分钟。"),
+    ], drinkDate: getSampleDate(offset: 17)),
     
     DrinkMetaData (drink: [
-        Drink_recrod(num: 5, ml: 100),
-    ], drinkDate: getSampleDate(offset: -8)),
+        Drink_recrod(num: 0, ml: "缓慢而稳定地跑，时间30分钟。"),
+    ], drinkDate: getSampleDate(offset: 22)),
     
     DrinkMetaData (drink: [
-        Drink_recrod(num: 6, ml: 100),
-    ], drinkDate: getSampleDate(offset: -10)),
+        Drink_recrod(num: 0, ml: "缓慢而稳定地跑，时间30分钟。"),
+    ], drinkDate: getSampleDate(offset: 24)),
     
     DrinkMetaData (drink: [
-        Drink_recrod(num: 7, ml: 100),
-    ], drinkDate: getSampleDate(offset: -22)),
+        Drink_recrod(num: 1, ml: "每次1km , 组间慢跑恢复 90 秒。"),
+    ], drinkDate: getSampleDate(offset: 1)),
     
     DrinkMetaData (drink: [
-        Drink_recrod(num: 0, ml: 100),
-    ], drinkDate: getSampleDate(offset: -15)),
+        Drink_recrod(num: 1, ml: "每次1km , 组间慢跑恢复 90 秒。"),
+    ], drinkDate: getSampleDate(offset: 15)),
     
     DrinkMetaData (drink: [
-        Drink_recrod(num: 1, ml: 100),
-    ], drinkDate: getSampleDate(offset: -20))
+        Drink_recrod(num: 2, ml: "每次800m ，組間慢跑恢復 200m。"),
+    ], drinkDate: getSampleDate(offset: 3)),
+    
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 2, ml: "每次800m ，組間慢跑恢復 200m。"),
+    ], drinkDate: getSampleDate(offset: 12)),
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 3, ml: "每次400公尺，组间休息 60 秒，站立恢复。"),
+    ], drinkDate: getSampleDate(offset: 8)),
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 4, ml: "缓慢而稳定地跑，时间在60-75分钟。"),
+    ], drinkDate: getSampleDate(offset: 6)),
+    DrinkMetaData (drink: [
+        Drink_recrod(num: 4, ml: "缓慢而稳定地跑，时间在60-75分钟。"),
+    ], drinkDate: getSampleDate(offset: 20)),
 ]

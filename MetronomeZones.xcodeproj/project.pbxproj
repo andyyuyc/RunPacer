@@ -20,7 +20,7 @@
 		5858959A2A95465F00CFAA41 /* MainMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585895952A95465F00CFAA41 /* MainMessage.swift */; };
 		5858959B2A95465F00CFAA41 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585895962A95465F00CFAA41 /* ChatLogView.swift */; };
 		5858959C2A95465F00CFAA41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585895972A95465F00CFAA41 /* ImagePicker.swift */; };
-		585895A42A9550B000CFAA41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 585895A32A9550B000CFAA41 /* GoogleService-Info.plist */; };
+		585895B32A95C59C00CFAA41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 585895B22A95C59C00CFAA41 /* GoogleService-Info.plist */; };
 		58B8124A2A93C08600E0D315 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B812432A93C08300E0D315 /* Match.swift */; };
 		58B8124B2A93C08600E0D315 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B812432A93C08300E0D315 /* Match.swift */; };
 		58B8124C2A93C08600E0D315 /* Match_Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B812442A93C08300E0D315 /* Match_Result.swift */; };
@@ -235,7 +235,7 @@
 		585895952A95465F00CFAA41 /* MainMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMessage.swift; sourceTree = "<group>"; };
 		585895962A95465F00CFAA41 /* ChatLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		585895972A95465F00CFAA41 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		585895A32A9550B000CFAA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Documents/swift/SwiftUIFirebase/SwiftUIFirebase/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		585895B22A95C59C00CFAA41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Documents/swift/SwiftUIFirebase/SwiftUIFirebase/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		58B812432A93C08300E0D315 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		58B812442A93C08300E0D315 /* Match_Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match_Result.swift; sourceTree = "<group>"; };
 		58B812452A93C08300E0D315 /* Match_Blind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match_Blind.swift; sourceTree = "<group>"; };
@@ -692,8 +692,8 @@
 				6B46836828229AEC0048E20B /* Extensions */,
 				6B305DB22814A1D300D877CB /* Sounds */,
 				6BE4A01B28107A57004CB806 /* Assets.xcassets */,
+				585895B22A95C59C00CFAA41 /* GoogleService-Info.plist */,
 				6B3402B8281ED9EE00C71216 /* appleWatchAnimation.gif */,
-				585895A32A9550B000CFAA41 /* GoogleService-Info.plist */,
 				6BE4A01D28107A57004CB806 /* Preview Content */,
 			);
 			path = SpeedOfSound;
@@ -1015,7 +1015,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585895A42A9550B000CFAA41 /* GoogleService-Info.plist in Resources */,
+				585895B32A95C59C00CFAA41 /* GoogleService-Info.plist in Resources */,
 				6B3402B9281ED9EE00C71216 /* appleWatchAnimation.gif in Resources */,
 				6BE4A01F28107A57004CB806 /* Preview Assets.xcassets in Resources */,
 				6B305DBB2814A1D300D877CB /* Mechanical metronome - High.aif in Resources */,
@@ -1486,7 +1486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeedOfSound/Preview Content\"";
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeedOfSound/Info.plist;
@@ -1530,7 +1530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeedOfSound/Preview Content\"";
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeedOfSound/Info.plist;

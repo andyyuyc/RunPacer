@@ -1393,7 +1393,7 @@
 				CODE_SIGN_ENTITLEMENTS = "SpeedOfSound WatchKit Extension/SpeedOfSound WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MetronomeZones-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = AquaPulse;
@@ -1405,7 +1405,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App requires your current location to run";
 				INFOPLIST_KEY_NSMotionUsageDescription = "AquaPulse required to use you motion usage";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.andyyuyc.iAquaPulse;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.xyu.iAquaPulse;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
@@ -1418,7 +1418,7 @@
 					"-weak_framework",
 					ClockKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1438,7 +1438,7 @@
 				CODE_SIGN_ENTITLEMENTS = "SpeedOfSound WatchKit Extension/SpeedOfSound WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MetronomeZones-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = AquaPulse;
@@ -1450,7 +1450,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App requires your current location to run";
 				INFOPLIST_KEY_NSMotionUsageDescription = "AquaPulse required to use you motion usage";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.andyyuyc.iAquaPulse;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.xyu.iAquaPulse;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
@@ -1463,7 +1463,7 @@
 					"-weak_framework",
 					ClockKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1486,7 +1486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeedOfSound/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeedOfSound/Info.plist;
@@ -1506,7 +1506,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1530,7 +1530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpeedOfSound/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeedOfSound/Info.plist;
@@ -1550,7 +1550,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1571,11 +1571,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.SpeedOfSoundTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.SpeedOfSoundTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1595,11 +1595,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.SpeedOfSoundTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.SpeedOfSoundTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1619,11 +1619,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.SpeedOfSoundUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.SpeedOfSoundUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1642,11 +1642,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.SpeedOfSoundUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.SpeedOfSoundUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1667,10 +1667,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andyyuyc.SpeedOfSound-WatchKit-AppTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xyu.SpeedOfSound-WatchKit-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1688,10 +1688,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andyyuyc.SpeedOfSound-WatchKit-AppTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xyu.SpeedOfSound-WatchKit-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1708,10 +1708,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andyyuyc.SpeedOfSound-WatchKit-AppUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xyu.SpeedOfSound-WatchKit-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1727,10 +1727,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andyyuyc.SpeedOfSound-WatchKit-AppUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xyu.SpeedOfSound-WatchKit-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1752,7 +1752,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iAquaPulseWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditableWidget;
@@ -1764,7 +1764,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.iAquaPulseWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse.iAquaPulseWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1784,7 +1784,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6Z3LZX7N42;
+				DEVELOPMENT_TEAM = 7Q6Y95A9V9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iAquaPulseWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditableWidget;
@@ -1796,7 +1796,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyyuyc.iAquaPulse.iAquaPulseWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyu.iAquaPulse.iAquaPulseWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

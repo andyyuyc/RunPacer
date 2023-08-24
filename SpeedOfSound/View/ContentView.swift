@@ -20,17 +20,15 @@ struct ContentView: View {
                     
                 }
                 .tag(1)
-            NavigationView {
-                ContentView_1()
-            }
+            
+            ContentView_1()
             .tabItem {
                 
             }
             .tag(2)
             
-            NavigationView {
-                MainMessagesView()
-            }
+            
+            MainMessagesView()
             .tabItem {
                 
             }
